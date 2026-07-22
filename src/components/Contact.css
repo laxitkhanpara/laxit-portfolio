@@ -1,0 +1,32 @@
+.contact {
+  padding-bottom: 48px;
+}
+
+.contact-panel {
+  padding: clamp(28px, 5vw, 48px);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(46, 230, 214, 0.14), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(245, 185, 66, 0.12), transparent 35%),
+    rgba(11, 16, 26, 0.8);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.contact-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}

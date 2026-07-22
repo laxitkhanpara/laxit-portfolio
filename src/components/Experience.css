@@ -1,0 +1,58 @@
+.experience-list {
+  display: grid;
+  gap: 16px;
+}
+
+.experience-card {
+  padding: 28px;
+}
+
+.experience-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.experience-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+}
+
+.experience-company {
+  margin: 4px 0 0;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.experience-period {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.experience-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.experience-card li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .experience-head {
+    flex-direction: column;
+  }
+}
