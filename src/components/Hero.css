@@ -42,11 +42,20 @@
     #03050a;
 }
 
-.hero-inner {
+.hero-layout {
   position: relative;
   z-index: 3;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+}
+
+.hero-inner {
+  position: relative;
   width: min(100%, 920px);
-  margin-right: auto;
   perspective: 900px;
 }
 

@@ -1,6 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion'
 import { projects } from '../content'
+import { ProjectMockup, projectGalleryVariant } from './mockups/ProjectMockup'
 import './Projects.css'
 
 function TiltCard({
@@ -16,6 +17,8 @@ function TiltCard({
   const srx = useSpring(rx, { stiffness: 180, damping: 18 })
   const sry = useSpring(ry, { stiffness: 180, damping: 18 })
   const glow = useMotionTemplate`radial-gradient(420px circle at ${ry}px ${rx}px, color-mix(in srgb, var(--accent) 28%, transparent), transparent 45%)`
+  const variants = projectGalleryVariant(project.id)
+  const [shot, setShot] = useState(0)
 
   return (
     <motion.article
@@ -48,10 +51,22 @@ function TiltCard({
     >
       <motion.div className="project-glow" style={{ background: glow }} />
       <div className="project-index">0{index + 1}</div>
-      <div className="project-visual" aria-hidden>
-        <div className="project-orb" />
-        <div className="project-ring" />
-        <div className="project-visual-label">{project.title}</div>
+      <div className="project-visual">
+        <ProjectMockup variant={variants[shot] ?? variants[0]} title={project.title} />
+        {variants.length > 1 ? (
+          <div className="project-shot-tabs">
+            {variants.map((v, i) => (
+              <button
+                key={`${v}-${i}`}
+                type="button"
+                className={shot === i ? 'active' : ''}
+                onClick={() => setShot(i)}
+              >
+                {i === 0 ? 'Devices' : 'Voice AI'}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
       <div className="project-body">
         <div className="project-kicker">
@@ -95,8 +110,7 @@ export function Projects() {
           <span className="text-gradient">Real systems. Real impact.</span>
         </h2>
         <p className="section-lead">
-          Cinematic case cards with live product ownership, hackathon wins, and open-source CLIs. Screenshots land next —
-          structure is ready.
+          UI previews rebuilt from your screenshots — Sharshah, GiveVote, GuruZone, Integrari Voice AI & RCS.
         </p>
 
         <div className="projects-list">

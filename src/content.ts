@@ -78,7 +78,7 @@ export const projects = [
     stack: ['Spring Boot', 'Kafka', 'React', 'AWS', 'Docker', 'K8s'],
     accent: '#2ee6d6',
     links: {},
-    mediaNote: 'Screenshots: campaign manager + RCS devices (images 6 & 7)',
+    mediaNote: 'Images 6 & 7 — Integrari RCS + Voice AI dashboards',
   },
   {
     id: 'esm',
@@ -112,8 +112,9 @@ export const projects = [
     accent: '#7cf29c',
     links: {
       github: 'https://github.com/laxitkhanpara/Role_management',
+      live: 'https://role-manage.onrender.com/',
     },
-    mediaNote: 'Screenshots: employee table + admin sidebar (images 1–3)',
+    mediaNote: 'Images 1–3 — Sharshah HR admin UI',
   },
   {
     id: 'guruzone',

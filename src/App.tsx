@@ -5,6 +5,7 @@ import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
 import { OpenSource } from './components/OpenSource'
 import { Awards } from './components/Awards'
+import { MomentGallery } from './components/MomentGallery'
 import { Skills } from './components/Skills'
 import { Contact } from './components/Contact'
 import { Cursor } from './components/Cursor'
@@ -23,6 +24,7 @@ export default function App() {
         <Experience />
         <Projects />
         <OpenSource />
+        <MomentGallery />
         <Awards />
         <Skills />
         <Contact />

@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { profile } from '../content'
 import { HeroScene } from './HeroScene'
+import { Portrait } from './Portrait'
 import './Hero.css'
 
 const letters = profile.name.split('')
@@ -38,6 +39,7 @@ export function Hero() {
       <div className="hero-veil" />
       <div className="grid-noise" />
 
+      <div className="hero-layout">
       <motion.div className="hero-inner" style={{ x: parallaxX, y: parallaxY }}>
         <motion.p
           className="eyebrow hero-eyebrow"
@@ -135,6 +137,8 @@ export function Hero() {
           </div>
         </motion.div>
       </motion.div>
+      <Portrait />
+      </div>
 
       <a className="hero-scroll" href="#impact">
         <span>Scroll</span>

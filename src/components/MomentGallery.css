@@ -1,0 +1,183 @@
+.moment-gallery {
+  overflow: hidden;
+}
+
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.moment-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(8, 12, 20, 0.85);
+  transition: box-shadow 0.25s ease;
+}
+
+.moment-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.moment-visual {
+  min-height: 140px;
+  padding: 16px;
+  display: grid;
+  align-content: end;
+  gap: 4px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--moment-accent) 35%, #05070d), #05070d 70%),
+    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--moment-accent) 40%, transparent), transparent 50%);
+}
+
+.moment-visual strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.moment-visual small,
+.moment-visual em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.75rem;
+}
+
+.moment-axpert .moment-brand {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--moment-accent);
+  font-size: 0.7rem;
+}
+
+.moment-axpert em {
+  color: #fff;
+  font-weight: 600;
+}
+
+.moment-pu .moment-people {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.moment-pu .moment-people i {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  display: block;
+}
+
+.moment-pu .moment-people i:nth-child(2) {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+}
+
+.moment-pu .moment-people i:nth-child(3) {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+}
+
+.moment-trophy .trophy {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.moment-liferay span {
+  font-weight: 700;
+  color: var(--moment-accent);
+}
+
+.moment-cert span {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--moment-accent);
+}
+
+.moment-body {
+  padding: 14px 16px 16px;
+}
+
+.moment-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moment-accent);
+  margin-bottom: 6px;
+}
+
+.moment-body h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.moment-body p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.moment-body small {
+  color: rgba(154, 166, 184, 0.7);
+  font-size: 0.72rem;
+}
+
+.cert-visual-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cert-visual {
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 160px;
+  border: 1px solid color-mix(in srgb, var(--moment-accent) 35%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--moment-accent) 22%, #05070d), #0a1020),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--moment-accent) 30%, transparent), transparent 45%);
+  display: grid;
+  align-content: space-between;
+}
+
+.cert-logo {
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.cert-visual strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.cert-visual em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.85rem;
+}
+
+.cert-visual small {
+  color: rgba(154, 166, 184, 0.65);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 1000px) {
+  .moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-visual-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+}
