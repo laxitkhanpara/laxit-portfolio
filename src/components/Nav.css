@@ -15,9 +15,9 @@
 }
 
 .nav-scrolled {
-  background: rgba(5, 7, 13, 0.72);
+  background: rgba(3, 5, 10, 0.72);
   border-bottom-color: var(--line);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
 }
 
 .nav-brand {
@@ -30,31 +30,54 @@
 }
 
 .nav-mark {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 12px;
   display: grid;
   place-items: center;
   font-size: 0.78rem;
   color: #041015;
   background: linear-gradient(135deg, var(--cyan), var(--amber));
-  box-shadow: 0 0 24px var(--glow);
+  box-shadow: 0 0 28px var(--glow);
+  animation: pulseMark 3.5s ease-in-out infinite;
+}
+
+.nav-brand-text {
+  font-size: 1.05rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 20px;
 }
 
 .nav-links a {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -62,7 +85,17 @@
   font-size: 0.85rem;
 }
 
-@media (max-width: 860px) {
+@keyframes pulseMark {
+  0%,
+  100% {
+    box-shadow: 0 0 18px var(--glow);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(46, 230, 214, 0.55);
+  }
+}
+
+@media (max-width: 900px) {
   .nav-links {
     display: none;
   }

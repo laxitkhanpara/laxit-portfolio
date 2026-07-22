@@ -7,7 +7,10 @@ export function Awards() {
     <section className="section" id="awards">
       <div className="section-inner">
         <p className="eyebrow">Wins & recognition</p>
-        <h2 className="section-title">Proof beyond the resume bullets.</h2>
+        <h2 className="section-title">
+          Wins that hit
+          <span className="text-gradient"> different.</span>
+        </h2>
         <p className="section-lead">
           Hackathon podiums, employee recognition, and Liferay certifications — the human side of shipping hard things.
         </p>

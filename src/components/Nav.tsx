@@ -4,9 +4,10 @@ import { profile } from '../content'
 import './Nav.css'
 
 const links = [
+  { href: '#impact', label: 'Impact' },
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
-  { href: '#open-source', label: 'Open Source' },
+  { href: '#open-source', label: 'OSS' },
   { href: '#awards', label: 'Awards' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -30,7 +31,7 @@ export function Nav() {
     >
       <a className="nav-brand" href="#top">
         <span className="nav-mark">LK</span>
-        <span>{profile.name}</span>
+        <span className="nav-brand-text">{profile.name.split(' ')[0]}</span>
       </a>
       <nav className="nav-links" aria-label="Primary">
         {links.map((link) => (
@@ -39,7 +40,7 @@ export function Nav() {
           </a>
         ))}
       </nav>
-      <a className="btn btn-ghost nav-cta" href={profile.resume} download>
+      <a className="btn btn-primary nav-cta" href={profile.resume} download>
         Resume
       </a>
     </motion.header>

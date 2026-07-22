@@ -7,11 +7,15 @@ import { OpenSource } from './components/OpenSource'
 import { Awards } from './components/Awards'
 import { Skills } from './components/Skills'
 import { Contact } from './components/Contact'
+import { Cursor } from './components/Cursor'
+import { ScrollProgress } from './components/ScrollProgress'
 import { profile } from './content'
 
 export default function App() {
   return (
     <>
+      <Cursor />
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
@@ -24,7 +28,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="site-footer">
-        © {new Date().getFullYear()} {profile.name} · Built with React · Three.js · Framer Motion
+        © {new Date().getFullYear()} {profile.name} · Engineered to impress · React · Three.js · Motion
       </footer>
     </>
   )
