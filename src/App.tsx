@@ -17,23 +17,25 @@ export default function App() {
       <div className="bg-orb bg-orb-b" aria-hidden />
       <div className="layout">
         <Sidebar />
-        <div className="card article has-scrollbar">
+        <main className="card article">
           <Navbar active={tab} onChange={setTab} />
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={tab}
-              initial={pageTransition.initial}
-              animate={pageTransition.animate}
-              exit={pageTransition.exit}
-              transition={pageTransition.transition}
-            >
-              {tab === 'About' ? <About /> : null}
-              {tab === 'Resume' ? <Resume /> : null}
-              {tab === 'Portfolio' ? <Portfolio /> : null}
-              {tab === 'Contact' ? <Contact /> : null}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+          <div className="article-scroll">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={tab}
+                initial={pageTransition.initial}
+                animate={pageTransition.animate}
+                exit={pageTransition.exit}
+                transition={pageTransition.transition}
+              >
+                {tab === 'About' ? <About /> : null}
+                {tab === 'Resume' ? <Resume /> : null}
+                {tab === 'Portfolio' ? <Portfolio /> : null}
+                {tab === 'Contact' ? <Contact /> : null}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </main>
       </div>
     </div>
   )

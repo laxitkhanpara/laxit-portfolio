@@ -72,4 +72,8 @@
   .service-list {
     grid-template-columns: 1fr;
   }
+
+  .service-item {
+    padding: 16px;
+  }
 }

@@ -2,24 +2,29 @@
   position: absolute;
   top: 0;
   right: 0;
+  left: auto;
+  height: var(--nav-h);
   display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 2px;
+  flex-wrap: nowrap;
   justify-content: flex-end;
-  padding: 0 10px;
-  background: hsla(240, 2%, 12%, 0.85);
+  padding: 0 8px;
+  background: hsla(240, 2%, 12%, 0.92);
   border: 1px solid var(--border);
-  border-radius: 0 20px;
-  backdrop-filter: blur(10px);
+  border-radius: 0 var(--radius);
+  backdrop-filter: blur(12px);
   z-index: 5;
 }
 
 .navbar button {
-  padding: 18px 14px;
+  position: relative;
+  padding: 0 16px;
   color: var(--muted);
   font-size: 14px;
   font-weight: 500;
   transition: color var(--transition);
+  white-space: nowrap;
 }
 
 .navbar button:hover {
@@ -30,20 +35,47 @@
   color: var(--accent);
 }
 
-@media (max-width: 580px) {
+.navbar button.active::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+@media (max-width: 1024px) {
   .navbar {
     position: fixed;
+    top: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    top: auto;
-    border-radius: 12px 12px 0 0;
+    height: calc(60px + env(safe-area-inset-bottom, 0px));
+    padding: 0 6px env(safe-area-inset-bottom, 0px);
+    border-radius: 14px 14px 0 0;
     justify-content: space-around;
-    padding: 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.35);
   }
 
   .navbar button {
-    padding: 16px 10px;
+    flex: 1;
+    padding: 0 8px;
     font-size: 13px;
+  }
+
+  .navbar button.active::after {
+    bottom: 12px;
+    left: 22%;
+    right: 22%;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar button {
+    font-size: 12px;
+    padding: 0 4px;
   }
 }
