@@ -1,0 +1,49 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0 10px;
+  background: hsla(240, 2%, 12%, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 0 20px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.navbar button {
+  padding: 18px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.navbar button:hover {
+  color: var(--text2);
+}
+
+.navbar button.active {
+  color: var(--accent);
+}
+
+@media (max-width: 580px) {
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-radius: 12px 12px 0 0;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .navbar button {
+    padding: 16px 10px;
+    font-size: 13px;
+  }
+}

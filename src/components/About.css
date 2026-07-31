@@ -1,0 +1,64 @@
+.about-text p {
+  margin: 0 0 14px;
+  font-weight: 300;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.service-item {
+  display: flex;
+  gap: 14px;
+  padding: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--card-soft);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.18);
+}
+
+.service-icon-box {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.service-item-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.service-item-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.about-extra {
+  margin-top: 32px;
+}
+
+.chip-list {
+  display: grid;
+  gap: 10px;
+}
+
+.chip-list li {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--jet);
+  color: var(--text2);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
