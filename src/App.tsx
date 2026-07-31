@@ -5,6 +5,7 @@ import { Navbar, type Tab } from './components/Navbar'
 import { About } from './components/About'
 import { Resume } from './components/Resume'
 import { Portfolio } from './components/Portfolio'
+import { Journey } from './components/Journey'
 import { Contact } from './components/Contact'
 import { pageTransition } from './motion'
 
@@ -36,6 +37,7 @@ export default function App() {
                 {tab === 'About' ? <About /> : null}
                 {tab === 'Resume' ? <Resume /> : null}
                 {tab === 'Portfolio' ? <Portfolio /> : null}
+                {tab === 'Journey' ? <Journey /> : null}
                 {tab === 'Contact' ? <Contact /> : null}
               </motion.div>
             </AnimatePresence>

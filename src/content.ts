@@ -165,3 +165,90 @@ export const awards = [
   '3rd Place — PUCode Hackathon (CampusWay AR)',
   'Codeshafe Winner — DSA Master',
 ]
+
+export type JourneyItem = {
+  id: string
+  year: string
+  title: string
+  tag: string
+  story: string
+  /** Put files in public/media/journey/ then set e.g. '/media/journey/axpert.jpg' */
+  image?: string
+  images?: string[]
+}
+
+export const journey: JourneyItem[] = [
+  {
+    id: 'education',
+    year: '2021 — 2025',
+    title: 'B.Tech · Information Technology',
+    tag: 'Education',
+    story:
+      'Parul Institute of Engineering and Technology — built fundamentals in software engineering while shipping freelance and hackathon products on the side. CGPA 8.39.',
+    image: '/media/journey/education.jpg',
+  },
+  {
+    id: 'vadodara-hackathon',
+    year: 'Sep 2023',
+    title: '1st Place — Vadodara Hackathon 4.0',
+    tag: 'Hackathon',
+    story:
+      'Led the team to win among 200+ teams with GuruZone — a personalized AI tutoring marketplace built under intense sprint pressure.',
+    image: '/media/journey/vadodara-hackathon.jpg',
+  },
+  {
+    id: 'pu-hackathon',
+    year: 'Mar 2024',
+    title: 'PU Code Hackathon · CampusWay',
+    tag: 'Hackathon',
+    story:
+      '36-hour AR indoor navigation marathon with Richa & Riya Patel. Backend / Unity / full-stack — finished 3rd at Parul University.',
+    image: '/media/journey/pu-hackathon.jpg',
+  },
+  {
+    id: 'cscodetech',
+    year: 'Apr 2023 — Sep 2024',
+    title: 'Full Stack Developer · CSCodeTech',
+    tag: 'Career',
+    story:
+      'Shipped Spring Boot + React modules across 10+ application areas and learned how enterprise products are architected end-to-end.',
+    image: '/media/journey/cscodetech.jpg',
+  },
+  {
+    id: 'aixtor',
+    year: 'Dec 2024 — Present',
+    title: 'Java Developer · Aixtor Technology',
+    tag: 'Career',
+    story:
+      'Owning live B2B CPaaS / Voice AI systems — Kafka messaging, ~10x call scheduling, GenAI workflow coaching, and mentoring juniors.',
+    image: '/media/journey/aixtor.jpg',
+  },
+  {
+    id: 'axpert',
+    year: 'Jan 2026',
+    title: 'AXpert of the Month · AI Ninja',
+    tag: 'Award',
+    story:
+      'Recognized for adapting AI into real delivery impact — smart implementation, innovative thinking, and consistent performance for the team.',
+    image: '/media/journey/axpert.jpg',
+  },
+  {
+    id: 'liferay-community',
+    year: '2026',
+    title: 'Liferay Community & Open Source',
+    tag: 'Community',
+    story:
+      'Published create-liferay-react-cx (featured on Liferay Blog), microservice CX CLI, certifications, and Liferay User Group Ahmedabad events.',
+    image: '/media/journey/liferay.jpg',
+    images: ['/media/journey/liferay-1.jpg', '/media/journey/liferay-2.jpg'],
+  },
+  {
+    id: 'codeshafe',
+    year: 'Achievement',
+    title: 'Codeshafe Winner · DSA Master',
+    tag: 'Award',
+    story: 'Competitive programming recognition for data structures and algorithms mastery.',
+    image: '/media/journey/codeshafe.jpg',
+  },
+]
+
