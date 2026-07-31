@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Sidebar } from './components/Sidebar'
 import { Navbar, type Tab } from './components/Navbar'
@@ -10,6 +10,11 @@ import { pageTransition } from './motion'
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('About')
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [tab])
 
   return (
     <div className="app">
@@ -19,7 +24,7 @@ export default function App() {
         <Sidebar />
         <main className="card article">
           <Navbar active={tab} onChange={setTab} />
-          <div className="article-scroll">
+          <div className="article-scroll" ref={scrollRef}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={tab}
