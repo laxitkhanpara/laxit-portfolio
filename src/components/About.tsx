@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import { awards, certifications, profile, services } from '../content'
+import { fadeUp, scaleIn, stagger } from '../motion'
 import './About.css'
 
 function ServiceIcon({ type }: { type: string }) {
@@ -49,17 +51,29 @@ export function About() {
         <h2 className="article-title">About me</h2>
       </header>
 
-      <section className="about-text">
+      <motion.section
+        className="about-text"
+        variants={stagger}
+        initial="hidden"
+        animate="show"
+      >
         {profile.about.split('\n\n').map((p) => (
-          <p key={p.slice(0, 24)}>{p}</p>
+          <motion.p key={p.slice(0, 24)} variants={fadeUp}>
+            {p}
+          </motion.p>
         ))}
-      </section>
+      </motion.section>
 
       <section>
         <h3 className="section-title">What I'm doing</h3>
-        <ul className="service-list">
+        <motion.ul className="service-list" variants={stagger} initial="hidden" animate="show">
           {services.map((s) => (
-            <li className="service-item" key={s.title}>
+            <motion.li
+              className="service-item"
+              key={s.title}
+              variants={scaleIn}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            >
               <div className="service-icon-box">
                 <ServiceIcon type={s.icon} />
               </div>
@@ -67,21 +81,25 @@ export function About() {
                 <h4 className="service-item-title">{s.title}</h4>
                 <p className="service-item-text">{s.text}</p>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </section>
 
       <section className="about-extra">
         <h3 className="section-title">Awards & certifications</h3>
-        <ul className="chip-list">
+        <motion.ul className="chip-list" variants={stagger} initial="hidden" animate="show">
           {awards.map((a) => (
-            <li key={a}>{a}</li>
+            <motion.li key={a} variants={fadeUp} whileHover={{ x: 4 }}>
+              {a}
+            </motion.li>
           ))}
           {certifications.map((c) => (
-            <li key={c}>{c}</li>
+            <motion.li key={c} variants={fadeUp} whileHover={{ x: 4 }}>
+              {c}
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </section>
     </article>
   )

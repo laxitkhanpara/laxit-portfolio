@@ -70,8 +70,60 @@ h4 {
 }
 
 .app {
+  position: relative;
   min-height: 100vh;
   padding: 15px;
+  overflow-x: hidden;
+}
+
+.bg-orb {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+.bg-orb-a {
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(255, 219, 112, 0.35), transparent 70%);
+}
+
+.bg-orb-b {
+  right: -100px;
+  bottom: -140px;
+  background: radial-gradient(circle, rgba(64, 196, 255, 0.22), transparent 70%);
+  animation-delay: -4s;
+}
+
+.layout,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -18px) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb,
+  .avatar-box,
+  .article-title::after,
+  .skill-progress-fill {
+    animation: none !important;
+  }
 }
 
 .layout {
@@ -113,6 +165,19 @@ h4 {
   height: 4px;
   border-radius: 4px;
   background: var(--accent);
+  animation: titleLine 1.2s ease forwards;
+  transform-origin: left;
+}
+
+@keyframes titleLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0.2;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .section-title {

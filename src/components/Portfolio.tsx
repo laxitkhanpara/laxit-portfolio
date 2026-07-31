@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { projects, type ProjectCategory } from '../content'
+import { scaleIn, stagger } from '../motion'
 import './Portfolio.css'
 
 const filters: ProjectCategory[] = ['All', 'Enterprise', 'Open Source', 'Hackathon', 'Apps']
@@ -28,30 +30,41 @@ export function Portfolio() {
         ))}
       </ul>
 
-      <ul className="project-list">
-        {visible.map((p) => (
-          <li className="project-item" key={p.title}>
-            <a
-              href={p.live || p.link || '#'}
-              target={p.live || p.link ? '_blank' : undefined}
-              rel={p.live || p.link ? 'noreferrer' : undefined}
-              className={!p.live && !p.link ? 'no-link' : undefined}
-              onClick={(e) => {
-                if (!p.live && !p.link) e.preventDefault()
-              }}
+      <motion.ul className="project-list" variants={stagger} initial="hidden" animate="show" key={filter}>
+        <AnimatePresence mode="popLayout">
+          {visible.map((p) => (
+            <motion.li
+              className="project-item"
+              key={p.title}
+              layout
+              variants={scaleIn}
+              initial="hidden"
+              animate="show"
+              exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+              whileHover={{ y: -8 }}
             >
-              <figure className="project-img">
-                <div className="project-cover" data-cat={p.category}>
-                  <span>{p.category}</span>
-                </div>
-              </figure>
-              <h3 className="project-title">{p.title}</h3>
-              <p className="project-category">{p.stack}</p>
-              <p className="project-blurb">{p.blurb}</p>
-            </a>
-          </li>
-        ))}
-      </ul>
+              <a
+                href={p.live || p.link || '#'}
+                target={p.live || p.link ? '_blank' : undefined}
+                rel={p.live || p.link ? 'noreferrer' : undefined}
+                className={!p.live && !p.link ? 'no-link' : undefined}
+                onClick={(e) => {
+                  if (!p.live && !p.link) e.preventDefault()
+                }}
+              >
+                <figure className="project-img">
+                  <div className="project-cover" data-cat={p.category}>
+                    <span>{p.category}</span>
+                  </div>
+                </figure>
+                <h3 className="project-title">{p.title}</h3>
+                <p className="project-category">{p.stack}</p>
+                <p className="project-blurb">{p.blurb}</p>
+              </a>
+            </motion.li>
+          ))}
+        </AnimatePresence>
+      </motion.ul>
     </article>
   )
 }

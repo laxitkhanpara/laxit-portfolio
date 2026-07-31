@@ -19,11 +19,22 @@
   background: var(--card-soft);
   border: 1px solid var(--border);
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.18);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-item:hover {
+  border-color: #ffdb7066;
+  box-shadow: 0 14px 34px hsla(0, 0%, 0%, 0.28);
 }
 
 .service-icon-box {
   color: var(--accent);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.service-item:hover .service-icon-box {
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .service-item-title {

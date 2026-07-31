@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import { education, experience, profile, skills } from '../content'
+import { fadeUp, stagger } from '../motion'
 import './Resume.css'
 
 export function Resume() {
@@ -17,9 +19,9 @@ export function Resume() {
           </div>
           <h3 className="section-title">Education</h3>
         </div>
-        <ol className="timeline-list">
+        <motion.ol className="timeline-list" variants={stagger} initial="hidden" animate="show">
           {education.map((item) => (
-            <li className="timeline-item" key={item.school}>
+            <motion.li className="timeline-item" key={item.school} variants={fadeUp}>
               <h4 className="timeline-item-title">{item.school}</h4>
               <span>{item.period}</span>
               <p className="timeline-text">
@@ -27,9 +29,9 @@ export function Resume() {
                 <br />
                 {item.detail}
               </p>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </section>
 
       <section className="timeline">
@@ -42,9 +44,9 @@ export function Resume() {
           </div>
           <h3 className="section-title">Experience</h3>
         </div>
-        <ol className="timeline-list">
+        <motion.ol className="timeline-list" variants={stagger} initial="hidden" animate="show">
           {experience.map((job) => (
-            <li className="timeline-item" key={`${job.company}-${job.role}`}>
+            <motion.li className="timeline-item" key={`${job.company}-${job.role}`} variants={fadeUp}>
               <h4 className="timeline-item-title">
                 {job.role} · {job.company}
               </h4>
@@ -54,29 +56,40 @@ export function Resume() {
                   <li key={p}>{p}</li>
                 ))}
               </ul>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </section>
 
       <section className="skills-section">
         <h3 className="section-title">My skills</h3>
-        <ul className="skills-list">
+        <motion.ul className="skills-list" variants={stagger} initial="hidden" animate="show">
           {skills.map((s) => (
-            <li className="skills-item" key={s.name}>
+            <motion.li className="skills-item" key={s.name} variants={fadeUp}>
               <div className="title-wrapper skills-head">
                 <h4>{s.name}</h4>
                 <data value={s.level}>{s.level}%</data>
               </div>
               <div className="skill-progress-bg">
-                <div className="skill-progress-fill" style={{ width: `${s.level}%` }} />
+                <motion.div
+                  className="skill-progress-fill"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${s.level}%` }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+                />
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ul>
-        <a className="resume-download" href={profile.resume} download>
+        </motion.ul>
+        <motion.a
+          className="resume-download"
+          href={profile.resume}
+          download
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.98 }}
+        >
           Download CV
-        </a>
+        </motion.a>
       </section>
     </article>
   )

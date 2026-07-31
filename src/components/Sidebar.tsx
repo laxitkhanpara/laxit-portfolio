@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import { profile } from '../content'
+import { fadeUp, stagger } from '../motion'
 import './Sidebar.css'
 
 function IconMail() {
@@ -44,17 +46,38 @@ export function Sidebar() {
     .slice(0, 2)
 
   return (
-    <aside className="sidebar card">
-      <div className="avatar-box" aria-hidden>
+    <motion.aside
+      className="sidebar card"
+      initial={{ opacity: 0, x: -24 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <motion.div
+        className="avatar-box"
+        aria-hidden
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.15, type: 'spring', stiffness: 160, damping: 14 }}
+        whileHover={{ scale: 1.04, rotate: -2 }}
+      >
         <span className="avatar-initials">{initials}</span>
-      </div>
-      <h1 className="sidebar-name">{profile.name}</h1>
-      <p className="sidebar-title">{profile.title}</p>
+      </motion.div>
+      <motion.h1 className="sidebar-name" variants={fadeUp} initial="hidden" animate="show">
+        {profile.name}
+      </motion.h1>
+      <motion.p
+        className="sidebar-title"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25 }}
+      >
+        {profile.title}
+      </motion.p>
 
       <div className="separator" />
 
-      <ul className="contacts-list">
-        <li className="contact-item">
+      <motion.ul className="contacts-list" variants={stagger} initial="hidden" animate="show">
+        <motion.li className="contact-item" variants={fadeUp}>
           <div className="icon-box">
             <IconMail />
           </div>
@@ -64,8 +87,8 @@ export function Sidebar() {
               {profile.email}
             </a>
           </div>
-        </li>
-        <li className="contact-item">
+        </motion.li>
+        <motion.li className="contact-item" variants={fadeUp}>
           <div className="icon-box">
             <IconPhone />
           </div>
@@ -75,8 +98,8 @@ export function Sidebar() {
               {profile.phone}
             </a>
           </div>
-        </li>
-        <li className="contact-item">
+        </motion.li>
+        <motion.li className="contact-item" variants={fadeUp}>
           <div className="icon-box">
             <IconCal />
           </div>
@@ -84,8 +107,8 @@ export function Sidebar() {
             <p className="contact-title">Experience</p>
             <p className="contact-text">3+ years</p>
           </div>
-        </li>
-        <li className="contact-item">
+        </motion.li>
+        <motion.li className="contact-item" variants={fadeUp}>
           <div className="icon-box">
             <IconPin />
           </div>
@@ -95,8 +118,8 @@ export function Sidebar() {
               {profile.location}
             </address>
           </div>
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
 
       <div className="separator" />
 
@@ -117,9 +140,15 @@ export function Sidebar() {
         </li>
       </ul>
 
-      <a className="sidebar-cta" href={profile.resume} download>
+      <motion.a
+        className="sidebar-cta"
+        href={profile.resume}
+        download
+        whileHover={{ scale: 1.02, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+      >
         Download CV
-      </a>
-    </aside>
+      </motion.a>
+    </motion.aside>
   )
 }
