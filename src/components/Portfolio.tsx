@@ -54,6 +54,7 @@ export function Portfolio() {
               >
                 <figure className="project-img">
                   <div className="project-cover" data-cat={p.category}>
+                    {p.image ? <img src={p.image} alt={p.title} loading="lazy" /> : null}
                     <span>{p.category}</span>
                   </div>
                 </figure>

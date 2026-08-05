@@ -31,8 +31,8 @@ export function Journey() {
       </header>
 
       <p className="journey-intro">
-        The path so far — hackathons, career milestones, awards, and community moments. Photos will light up here as
-        you add them.
+        The path so far — education, hackathons, certifications, product builds, awards, and community moments —
+        told through real photos from the journey.
       </p>
 
       <motion.ol className="journey-list" variants={stagger} initial="hidden" animate="show">

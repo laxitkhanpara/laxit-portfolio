@@ -89,12 +89,14 @@ export const projects: {
   stack: string
   link?: string
   live?: string
+  image?: string
 }[] = [
   {
     title: 'Integrari · Voice AI / CPaaS',
     category: 'Enterprise',
     blurb: 'AI-driven ERP messaging + Voice AI campaign platform at Aixtor.',
     stack: 'Spring Boot · Kafka · React · AWS',
+    image: '/media/journey/integrari-voice.jpg',
   },
   {
     title: 'ESM Platform',
@@ -109,6 +111,7 @@ export const projects: {
     stack: 'React · MySQL',
     link: 'https://github.com/laxitkhanpara/Role_management',
     live: 'https://role-manage.onrender.com/',
+    image: '/media/journey/sharshah-landing.jpg',
   },
   {
     title: 'GuruZone',
@@ -116,6 +119,7 @@ export const projects: {
     blurb: '1st place Vadodara Hackathon 4.0 — personalized tutor marketplace.',
     stack: 'Spring Boot · Flutter · MySQL',
     link: 'https://github.com/laxitkhanpara/GuruZone',
+    image: '/media/journey/guruzone.jpg',
   },
   {
     title: 'GiveVote · E-Voting',
@@ -123,6 +127,7 @@ export const projects: {
     blurb: 'Consumer-facing digital voting experience for elections and candidates.',
     stack: 'JavaScript · Node · Express',
     link: 'https://github.com/laxitkhanpara/OnlineVotingSystem',
+    image: '/media/journey/givevote.jpg',
   },
   {
     title: 'CampusWay AR',
@@ -157,6 +162,8 @@ export const projects: {
 export const certifications = [
   'Liferay Application Developer — Liferay, Inc. (May 2026)',
   'Building Enterprise Websites with Liferay — Liferay, Inc. (Apr 2026)',
+  'Build a natural language processing solution with Azure AI Language — Microsoft (Jan 2024)',
+  'Build an Azure AI Vision solution — Microsoft (Jan 2024)',
 ]
 
 export const awards = [
@@ -172,8 +179,9 @@ export type JourneyItem = {
   title: string
   tag: string
   story: string
-  /** Put files in public/media/journey/ then set e.g. '/media/journey/axpert.jpg' */
+  /** Primary photo under public/media/journey/ */
   image?: string
+  /** Extra gallery photos for the same milestone */
   images?: string[]
 }
 
@@ -184,17 +192,38 @@ export const journey: JourneyItem[] = [
     title: 'B.Tech · Information Technology',
     tag: 'Education',
     story:
-      'Parul Institute of Engineering and Technology — built fundamentals in software engineering while shipping freelance and hackathon products on the side. CGPA 8.39.',
-    image: '/media/journey/education.jpg',
+      'Parul Institute of Engineering and Technology — built software fundamentals while shipping freelance and hackathon products on the side. Graduated with CGPA 8.39.',
+    image: '/media/journey/education-graduation.jpg',
+    images: ['/media/journey/education-campus.jpg'],
   },
   {
     id: 'vadodara-hackathon',
     year: 'Sep 2023',
-    title: '1st Place — Vadodara Hackathon 4.0',
+    title: 'Vadodara Hackathon · GuruZone',
     tag: 'Hackathon',
     story:
-      'Led the team to win among 200+ teams with GuruZone — a personalized AI tutoring marketplace built under intense sprint pressure.',
+      'Built GuruZone — a personalized AI tutoring marketplace — and took 1st place among 200+ teams. Sprint pressure, real users, real product.',
     image: '/media/journey/vadodara-hackathon.jpg',
+    images: ['/media/journey/guruzone.jpg'],
+  },
+  {
+    id: 'cybersecurity-fdp',
+    year: 'Dec 2023',
+    title: 'AICTE ATAL FDP · Cybersecurity',
+    tag: 'Learning',
+    story:
+      'Completed the AICTE ATAL one-week Faculty Development Program on Cybersecurity Strategies and Best Practices at Parul University.',
+    image: '/media/journey/cybersecurity-fdp.jpg',
+  },
+  {
+    id: 'azure-ai',
+    year: 'Jan 2024',
+    title: 'Microsoft Azure AI Credentials',
+    tag: 'Certification',
+    story:
+      'Earned Microsoft credentials for Azure AI Language (NLP) and Azure AI Vision — doubling down on applied AI skills.',
+    image: '/media/journey/azure-nlp.jpg',
+    images: ['/media/journey/azure-vision.jpg'],
   },
   {
     id: 'pu-hackathon',
@@ -206,13 +235,38 @@ export const journey: JourneyItem[] = [
     image: '/media/journey/pu-hackathon.jpg',
   },
   {
-    id: 'cscodetech',
-    year: 'Apr 2023 — Sep 2024',
-    title: 'Full Stack Developer · CSCodeTech',
+    id: 'campus-competitions',
+    year: '2024',
+    title: 'CodeChef · Ideathon · Campus Awards',
+    tag: 'Award',
+    story:
+      'Campus competitions kept the competitive edge sharp — CodeChef events, Ideathon 2024, and Engineers’ Day recognitions from the IT department.',
+    image: '/media/journey/codechef-engineers-day.jpg',
+    images: ['/media/journey/codechef-ideathon.jpg', '/media/journey/campus-certificates.jpg'],
+  },
+  {
+    id: 'placement',
+    year: '2024 — 2025',
+    title: 'Proudly Placed · Campus Milestone',
     tag: 'Career',
     story:
-      'Shipped Spring Boot + React modules across 10+ application areas and learned how enterprise products are architected end-to-end.',
-    image: '/media/journey/cscodetech.jpg',
+      'Campus placement season — celebrating the jump from student projects to shipping production software with friends who ran the race together.',
+    image: '/media/journey/placement-award.jpg',
+    images: ['/media/journey/placement-friends.jpg'],
+  },
+  {
+    id: 'products',
+    year: '2023 — 2024',
+    title: 'Shipping Products · Sharshah & GiveVote',
+    tag: 'Build',
+    story:
+      'Full-stack product work across HR admin (Sharshah) and digital voting (GiveVote) — React dashboards, role management, and consumer-facing flows.',
+    image: '/media/journey/sharshah-landing.jpg',
+    images: [
+      '/media/journey/sharshah-dashboard.jpg',
+      '/media/journey/sharshah-employees.jpg',
+      '/media/journey/givevote.jpg',
+    ],
   },
   {
     id: 'aixtor',
@@ -220,8 +274,9 @@ export const journey: JourneyItem[] = [
     title: 'Java Developer · Aixtor Technology',
     tag: 'Career',
     story:
-      'Owning live B2B CPaaS / Voice AI systems — Kafka messaging, ~10x call scheduling, GenAI workflow coaching, and mentoring juniors.',
-    image: '/media/journey/aixtor.jpg',
+      'Owning live B2B CPaaS / Voice AI systems on Integrari — Kafka messaging, campaign dialing, RCS devices, and GenAI workflow coaching.',
+    image: '/media/journey/aixtor-desk.jpg',
+    images: ['/media/journey/integrari-voice.jpg', '/media/journey/integrari-rcs.jpg'],
   },
   {
     id: 'axpert',
@@ -235,20 +290,27 @@ export const journey: JourneyItem[] = [
   {
     id: 'liferay-community',
     year: '2026',
-    title: 'Liferay Community & Open Source',
+    title: 'Liferay Community · Certs · Open Source',
     tag: 'Community',
     story:
-      'Published create-liferay-react-cx (featured on Liferay Blog), microservice CX CLI, certifications, and Liferay User Group Ahmedabad events.',
-    image: '/media/journey/liferay.jpg',
-    images: ['/media/journey/liferay-1.jpg', '/media/journey/liferay-2.jpg'],
+      'Liferay User Group Ahmedabad, Application Developer + Enterprise Website certifications, Marketplace Fragment Hackathon, and open-source CX CLIs.',
+    image: '/media/journey/liferay-usergroup.jpg',
+    images: [
+      '/media/journey/liferay-meetup.jpg',
+      '/media/journey/liferay-mentor.jpg',
+      '/media/journey/liferay-app-developer.jpg',
+      '/media/journey/liferay-enterprise.jpg',
+      '/media/journey/liferay-hackathon.jpg',
+    ],
   },
   {
-    id: 'codeshafe',
-    year: 'Achievement',
-    title: 'Codeshafe Winner · DSA Master',
-    tag: 'Award',
-    story: 'Competitive programming recognition for data structures and algorithms mastery.',
-    image: '/media/journey/codeshafe.jpg',
+    id: 'cursor-event',
+    year: '2026',
+    title: 'Building with Cursor',
+    tag: 'Community',
+    story:
+      'Showing up in the Cursor community — shipping faster with AI-assisted workflows and staying close to tools that shape how engineers build.',
+    image: '/media/journey/cursor-event.jpg',
   },
 ]
 
