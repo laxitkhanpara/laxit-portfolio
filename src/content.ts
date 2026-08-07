@@ -84,6 +84,7 @@ export const skills = [
 export const skillIcons: { name: string; src: string; href: string }[] = [
   { name: 'Java', src: '/assets/skills/java.svg', href: 'https://www.java.com/' },
   { name: 'Spring Boot', src: '/assets/skills/springboot.svg', href: 'https://spring.io/projects/spring-boot' },
+  { name: 'Liferay', src: '/assets/skills/liferay.svg', href: 'https://www.liferay.com/' },
   { name: 'Apache Kafka', src: '/assets/skills/apachekafka.svg', href: 'https://kafka.apache.org/' },
   { name: 'React', src: '/assets/skills/react.svg', href: 'https://react.dev/' },
   { name: 'TypeScript', src: '/assets/skills/typescript.svg', href: 'https://www.typescriptlang.org/' },
@@ -93,7 +94,6 @@ export const skillIcons: { name: string; src: string; href: string }[] = [
   { name: 'AWS', src: '/assets/skills/aws.svg', href: 'https://aws.amazon.com/' },
   { name: 'Docker', src: '/assets/skills/docker.svg', href: 'https://www.docker.com/' },
   { name: 'Kubernetes', src: '/assets/skills/kubernetes.svg', href: 'https://kubernetes.io/' },
-  { name: 'Liferay', src: '/assets/skills/liferay.svg', href: 'https://www.liferay.com/' },
   { name: 'Git', src: '/assets/skills/git.svg', href: 'https://git-scm.com/' },
   { name: 'Postman', src: '/assets/skills/postman.svg', href: 'https://www.postman.com/' },
   { name: 'Redis', src: '/assets/skills/redis.svg', href: 'https://redis.io/' },

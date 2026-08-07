@@ -128,7 +128,7 @@
 }
 
 .clients-item img {
-  width: min(100%, 88px);
+  width: min(100%, 110px);
   height: 48px;
   object-fit: contain;
   filter: none;
