@@ -80,6 +80,26 @@ export const skills = [
   { name: 'Liferay DXP', level: 80 },
 ]
 
+/** Icon strip on About (Aakash-style clients list) — SVGs in public/assets/skills/ */
+export const skillIcons: { name: string; src: string; href: string }[] = [
+  { name: 'Java', src: '/assets/skills/java.svg', href: 'https://www.java.com/' },
+  { name: 'Spring Boot', src: '/assets/skills/springboot.svg', href: 'https://spring.io/projects/spring-boot' },
+  { name: 'Apache Kafka', src: '/assets/skills/apachekafka.svg', href: 'https://kafka.apache.org/' },
+  { name: 'React', src: '/assets/skills/react.svg', href: 'https://react.dev/' },
+  { name: 'TypeScript', src: '/assets/skills/typescript.svg', href: 'https://www.typescriptlang.org/' },
+  { name: 'Node.js', src: '/assets/skills/nodedotjs.svg', href: 'https://nodejs.org/' },
+  { name: 'MySQL', src: '/assets/skills/mysql.svg', href: 'https://www.mysql.com/' },
+  { name: 'PostgreSQL', src: '/assets/skills/postgresql.svg', href: 'https://www.postgresql.org/' },
+  { name: 'AWS', src: '/assets/skills/aws.svg', href: 'https://aws.amazon.com/' },
+  { name: 'Docker', src: '/assets/skills/docker.svg', href: 'https://www.docker.com/' },
+  { name: 'Kubernetes', src: '/assets/skills/kubernetes.svg', href: 'https://kubernetes.io/' },
+  { name: 'Liferay', src: '/assets/skills/liferay.svg', href: 'https://www.liferay.com/' },
+  { name: 'Git', src: '/assets/skills/git.svg', href: 'https://git-scm.com/' },
+  { name: 'Postman', src: '/assets/skills/postman.svg', href: 'https://www.postman.com/' },
+  { name: 'Redis', src: '/assets/skills/redis.svg', href: 'https://redis.io/' },
+  { name: 'Linux', src: '/assets/skills/linux.svg', href: 'https://www.linux.org/' },
+]
+
 export type ProjectCategory = 'All' | 'Enterprise' | 'Open Source' | 'Hackathon' | 'Apps'
 
 export const projects: {

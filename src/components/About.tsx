@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { awards, certifications, profile, services } from '../content'
+import { awards, certifications, profile, services, skillIcons } from '../content'
 import { fadeUp, scaleIn, stagger } from '../motion'
 import './About.css'
 
@@ -84,6 +84,19 @@ export function About() {
             </motion.li>
           ))}
         </motion.ul>
+      </section>
+
+      <section className="clients">
+        <h3 className="section-title">Skills</h3>
+        <ul className="clients-list has-scrollbar">
+          {skillIcons.map((skill) => (
+            <li className="clients-item" key={skill.name}>
+              <a href={skill.href} target="_blank" rel="noreferrer" title={skill.name}>
+                <img src={skill.src} alt={skill.name} />
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="about-extra">
