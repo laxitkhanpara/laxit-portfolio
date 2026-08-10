@@ -1,4 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#1e1e1f"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffdb70">LK</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="LK">
+  <defs>
+    <linearGradient id="ring" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset="0.55" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="face" x1="16" y1="14" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121A26"/>
+      <stop offset="1" stop-color="#0A1018"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="18" y1="20" x2="46" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft outer glow -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="#070B12"/>
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#ring)" opacity="0.22"/>
+
+  <!-- teal neon frame -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#ring)"/>
+  <rect x="7.5" y="7.5" width="49" height="49" rx="13.5" fill="url(#face)"/>
+
+  <!-- LK monogram -->
+  <text
+    x="32"
+    y="41"
+    text-anchor="middle"
+    font-family="'Space Grotesk', 'IBM Plex Sans', system-ui, sans-serif"
+    font-size="22"
+    font-weight="700"
+    letter-spacing="-0.04em"
+    fill="url(#ink)"
+  >LK</text>
 </svg>
