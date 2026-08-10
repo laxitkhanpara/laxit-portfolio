@@ -39,7 +39,7 @@
 .about-headline {
   position: relative;
   z-index: 1;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;
@@ -52,15 +52,48 @@
   color: transparent;
 }
 
-.about-body {
+.about-bullets {
   position: relative;
   z-index: 1;
+  display: grid;
+  gap: 12px;
   margin: 0 0 18px;
-  max-width: 62ch;
-  font-weight: 400;
+  padding: 0;
+  list-style: none;
+  max-width: 64ch;
+}
+
+.about-bullets li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.about-bullet-marker {
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #38bdf8);
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.55);
+}
+
+.about-bullets p {
+  margin: 0;
   color: var(--text2);
   font-size: 15.5px;
   line-height: 1.7;
+  font-weight: 400;
+}
+
+.text-emphasis {
+  font-weight: 650;
+  background: linear-gradient(120deg, #ffffff 8%, var(--accent) 48%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
 }
 
 .tech-badges {

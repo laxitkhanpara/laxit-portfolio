@@ -17,7 +17,20 @@ export const profile = {
   },
   headline:
     'Building AI-driven products on scalable backend systems',
-  about: `I build production systems where backend engineering meets applied AI — Java/Spring services, event-driven pipelines, and LLM-powered features that ship real product value.`,
+  aboutBullets: [
+    {
+      leading: 'Design ',
+      emphasis: 'high-performance, scalable systems',
+      trailing:
+        ' that thrive under enterprise load — resilient APIs, event-driven pipelines, and measurable throughput.',
+    },
+    {
+      leading: 'Deliver end-to-end ',
+      emphasis: 'Liferay · Spring Boot · React',
+      trailing:
+        ' enterprise solutions — from portals and platforms to production-ready product features.',
+    },
+  ],
   techBadges: [
     'Java',
     'Spring Boot',

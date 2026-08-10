@@ -78,9 +78,18 @@ export function About() {
           {profile.headline}
         </motion.h3>
 
-        <motion.p className="about-body" variants={fadeUp}>
-          {profile.about}
-        </motion.p>
+        <motion.ul className="about-bullets" variants={fadeUp} aria-label="Summary">
+          {profile.aboutBullets.map((bullet) => (
+            <li key={bullet.emphasis}>
+              <span className="about-bullet-marker" aria-hidden />
+              <p>
+                {bullet.leading}
+                <span className="text-emphasis">{bullet.emphasis}</span>
+                {bullet.trailing}
+              </p>
+            </li>
+          ))}
+        </motion.ul>
 
         <motion.ul className="tech-badges" variants={fadeUp} aria-label="Tech stack">
           {profile.techBadges.map((badge) => (
