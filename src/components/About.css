@@ -2,8 +2,9 @@
   position: relative;
   margin-bottom: 28px;
   padding: 24px 22px 18px;
-  /* keep decorative glow clipped horizontally without cutting the skills row */
-  overflow: visible;
+  overflow: hidden;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .about-hero::after {
@@ -42,7 +43,7 @@
   position: relative;
   z-index: 1;
   margin: 0 0 16px;
-  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-size: clamp(1.2rem, 4.2vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.03em;
@@ -52,6 +53,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  overflow-wrap: anywhere;
 }
 
 .about-bullets {
@@ -87,6 +89,7 @@
   font-size: 15.5px;
   line-height: 1.7;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .text-emphasis {
@@ -157,6 +160,8 @@
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 56px;
   padding: 6px 0;
   overflow: hidden;
@@ -168,10 +173,12 @@
   display: flex;
   align-items: center;
   width: max-content;
+  max-width: none;
   gap: 6px;
   padding: 2px 0;
   animation: skillsMarquee 32s linear infinite;
   will-change: transform;
+  flex: 0 0 auto;
 }
 
 .skills-marquee:hover .skills-marquee-track {
@@ -228,7 +235,12 @@
   display: flex;
   gap: 14px;
   padding: 20px;
+  min-width: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-item > div:last-child {
+  min-width: 0;
 }
 
 .service-item:hover {
@@ -265,6 +277,7 @@
   color: var(--muted);
   font-size: 14px;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .about-extra {
@@ -284,6 +297,7 @@
   color: var(--text2);
   font-size: 14px;
   backdrop-filter: blur(8px);
+  overflow-wrap: break-word;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -316,20 +330,45 @@
 }
 
 @media (max-width: 768px) {
+  .about {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .service-list {
     grid-template-columns: 1fr;
   }
 
   .service-item {
-    padding: 16px;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .service-icon-box {
+    width: 40px;
+    height: 40px;
   }
 
   .about-ctas {
     flex-direction: column;
   }
 
+  .about-ctas .btn {
+    width: 100%;
+  }
+
   .about-hero {
-    padding: 20px 16px 16px;
+    padding: 16px 14px 14px;
+    margin-bottom: 20px;
+  }
+
+  .about-bullets p {
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  .about-headline {
+    max-width: none;
   }
 
   .skills-marquee {
@@ -345,5 +384,25 @@
   .skills-marquee-item img {
     width: 24px;
     height: 24px;
+  }
+
+  .chip-list li {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tech-badges li span {
+    padding: 6px 10px;
+    font-size: 11.5px;
+  }
+
+  .service-item-title {
+    font-size: 15px;
+  }
+
+  .service-item-text {
+    font-size: 13px;
   }
 }

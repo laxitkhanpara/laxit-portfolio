@@ -305,12 +305,39 @@
 
 @media (max-width: 720px) {
   .journey-item {
-    gap: 12px;
+    gap: 10px;
+    grid-template-columns: 20px 1fr;
+  }
+
+  .journey-rail {
+    padding-top: 8px;
+  }
+
+  .journey-dot {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
   .journey-card {
-    padding: 14px;
-    margin-bottom: 16px;
+    padding: 14px 12px;
+    margin-bottom: 14px;
+    min-width: 0;
+  }
+
+  .journey-title {
+    font-size: 1rem;
+    overflow-wrap: break-word;
+  }
+
+  .journey-story {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .journey-intro {
+    font-size: 14px;
+    margin-bottom: 18px;
   }
 
   .journey-gallery.gallery-2,
@@ -338,7 +365,38 @@
   }
 
   .journey-thumb {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .journey-lightbox {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .journey-lightbox img {
+    max-height: min(78dvh, 100%);
+    border-radius: 10px;
+  }
+
+  .journey-lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .journey-gallery.gallery-2,
+  .journey-gallery.gallery-4,
+  .journey-gallery.gallery-many {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-2 .journey-photo,
+  .gallery-4 .journey-photo,
+  .gallery-many .journey-photo {
+    aspect-ratio: 16 / 10;
   }
 }

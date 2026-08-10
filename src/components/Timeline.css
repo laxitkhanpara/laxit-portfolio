@@ -182,21 +182,57 @@
 
 @media (max-width: 640px) {
   .timeline-list {
-    padding-left: 28px;
+    padding-left: 24px;
   }
 
   .timeline-dot {
-    left: -28px;
-    top: 22px;
+    left: -24px;
+    top: 20px;
     width: 10px;
     height: 10px;
   }
 
   .timeline-list::before {
-    left: 4px;
+    left: 3px;
   }
 
   .timeline-card {
-    padding: 14px;
+    padding: 14px 12px;
+  }
+
+  .timeline-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .timeline-item-title {
+    font-size: 15px;
+    overflow-wrap: break-word;
+  }
+
+  .timeline-period {
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .timeline-points {
+    padding-left: 16px;
+    font-size: 13px;
+  }
+
+  .experience-stack li span {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .title-wrapper {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .title-wrapper .icon-box {
+    width: 36px;
+    height: 36px;
   }
 }

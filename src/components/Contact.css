@@ -164,10 +164,41 @@
 
   .input-wrapper {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-form {
+    gap: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 16px; /* prevent iOS zoom */
   }
 
   .form-btn {
     justify-self: stretch;
     justify-content: center;
+    width: 100%;
+  }
+
+  .form-note {
+    justify-self: start;
+  }
+
+  .map-placeholder {
+    min-height: 140px;
+    padding: 18px 14px;
+  }
+
+  .map-placeholder strong {
+    font-size: 16px;
+    overflow-wrap: break-word;
+  }
+
+  .contact-alt {
+    flex-direction: column;
+    gap: 10px;
   }
 }

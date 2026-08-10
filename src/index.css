@@ -44,11 +44,13 @@ body,
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  max-width: 100%;
   font-family: var(--ff);
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(var(--accent-rgb), 0.12), transparent 55%),
@@ -58,6 +60,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -100,6 +103,8 @@ h4 {
   height: 100dvh;
   padding: var(--page-pad);
   overflow: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .bg-orb {
@@ -137,6 +142,8 @@ h4 {
   grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
   gap: var(--gap);
   align-items: stretch;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .card {
@@ -149,6 +156,8 @@ h4 {
   backdrop-filter: var(--glass);
   -webkit-backdrop-filter: var(--glass);
   min-height: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .card::before {
@@ -173,18 +182,25 @@ h4 {
   flex-direction: column;
   height: 100%;
   min-height: 0;
+  min-width: 0;
   overflow: hidden;
 }
 
 .article-scroll {
   flex: 1 1 auto;
   min-height: 0;
+  min-width: 0;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding: 24px 28px 32px;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) transparent;
+}
+
+.article-scroll > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .article-scroll::-webkit-scrollbar {
@@ -323,32 +339,39 @@ h4 {
 @media (max-width: 1024px) {
   body {
     overflow: auto;
+    overflow-x: clip;
   }
 
   .app {
     height: auto;
     min-height: 100dvh;
     overflow: visible;
+    overflow-x: clip;
     padding: 12px;
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   }
 
   .layout {
     height: auto;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
 
   .article {
     height: auto;
-    min-height: 60vh;
+    min-height: 50vh;
     overflow: visible;
   }
 
   .article-scroll {
     overflow: visible;
-    padding: 20px 20px 24px;
+    overflow-x: clip;
+    padding: 18px 16px 28px;
     scrollbar-gutter: auto;
+  }
+
+  .card {
+    border-radius: 18px;
   }
 }
 
@@ -357,18 +380,37 @@ h4 {
   :root {
     --page-pad: 8px;
     --gap: 10px;
+    --radius: 18px;
+    --radius-sm: 14px;
   }
 
   .app {
     padding: 8px;
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 
   .article-scroll {
-    padding: 16px 14px 20px;
+    padding: 14px 12px 24px;
   }
 
-  .btn {
+  .section-title {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .about-ctas .btn,
+  .form-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .app {
+    padding: 6px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .article-scroll {
+    padding: 12px 10px 22px;
   }
 }

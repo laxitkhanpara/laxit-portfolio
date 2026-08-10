@@ -34,8 +34,8 @@ export const scaleIn: Variants = {
 }
 
 export const pageTransition = {
-  initial: { opacity: 0, y: 18, filter: 'blur(4px)' },
-  animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-  exit: { opacity: 0, y: -12, filter: 'blur(4px)' },
-  transition: { duration: 0.38, ease: easeOut } as Transition,
+  initial: { opacity: 0, y: 14 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+  transition: { duration: 0.32, ease: easeOut } as Transition,
 }

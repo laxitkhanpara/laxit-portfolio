@@ -145,11 +145,23 @@
 
   .filter-list {
     gap: 6px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .filter-list button {
     padding: 7px 10px;
     font-size: 12px;
+  }
+
+  .project-title {
+    overflow-wrap: break-word;
+  }
+
+  .project-blurb {
+    font-size: 12.5px;
+  }
+
+  .project-cover {
+    border-radius: 12px;
   }
 }
