@@ -194,52 +194,83 @@
   box-shadow: var(--neon);
 }
 
-/* Skills icon strip — centered, tight, no scroll */
-.clients-list {
+/* Infinite skills marquee */
+.skills-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.skills-marquee-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 0;
-  margin: 0;
-  padding: 4px 0 0;
-  list-style: none;
-  overflow: visible;
+  width: max-content;
+  gap: 4px;
+  animation: skillsMarquee 32s linear infinite;
+  will-change: transform;
 }
 
-.clients-item {
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+.skills-marquee-item {
+  display: grid;
+  place-items: center;
   flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-}
-
-.clients-item a {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  padding: 6px;
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 12px;
   border: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
-.clients-item a:hover {
-  border-color: rgba(var(--accent-rgb), 0.4);
-  background: var(--accent-soft);
-  box-shadow: var(--neon);
-}
-
-.clients-item img {
-  width: 32px;
-  height: 32px;
+.skills-marquee-item img {
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   filter: none;
-  transition: transform 0.25s ease;
+  transition: filter 0.25s ease, transform 0.25s ease;
 }
 
-.clients-item a:hover img {
-  transform: scale(1.1);
+.skills-marquee-item:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.1);
+  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.35);
+  transform: translateY(-2px) scale(1.06);
+}
+
+.skills-marquee-item:hover img {
+  filter: drop-shadow(0 0 8px rgba(var(--accent-rgb), 0.55));
+  transform: scale(1.08);
+}
+
+@keyframes skillsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skills-marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -259,13 +290,13 @@
     flex-direction: column;
   }
 
-  .clients-item a {
+  .skills-marquee-item {
     width: 42px;
     height: 42px;
   }
 
-  .clients-item img {
-    width: 28px;
-    height: 28px;
+  .skills-marquee-item img {
+    width: 26px;
+    height: 26px;
   }
 }

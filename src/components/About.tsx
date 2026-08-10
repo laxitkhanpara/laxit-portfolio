@@ -91,12 +91,12 @@ export function About() {
         </motion.ul>
 
         <motion.div className="about-ctas" variants={fadeUp}>
-          <a className="btn btn-primary" href={profile.resume} download>
+          <a className="btn btn-primary btn-glow" href={profile.resume} download>
             <IconResume />
             Resume
           </a>
           <a
-            className="btn btn-ghost"
+            className="btn btn-ghost btn-glow"
             href={profile.socials.github}
             target="_blank"
             rel="noreferrer"
@@ -106,15 +106,24 @@ export function About() {
           </a>
         </motion.div>
 
-        <motion.ul className="clients-list about-skills" variants={fadeUp} aria-label="Skills">
-          {skillIcons.map((skill) => (
-            <li className="clients-item" key={skill.name}>
-              <a href={skill.href} target="_blank" rel="noreferrer" title={skill.name}>
-                <img src={skill.src} alt={skill.alt} title={skill.name} />
+        <motion.div className="skills-marquee about-skills" variants={fadeUp} aria-label="Skills">
+          <div className="skills-marquee-track">
+            {[...skillIcons, ...skillIcons].map((skill, i) => (
+              <a
+                className="skills-marquee-item"
+                key={`${skill.name}-${i}`}
+                href={skill.href}
+                target="_blank"
+                rel="noreferrer"
+                title={skill.name}
+                aria-hidden={i >= skillIcons.length ? true : undefined}
+                tabIndex={i >= skillIcons.length ? -1 : undefined}
+              >
+                <img src={skill.src} alt={i >= skillIcons.length ? '' : skill.alt} title={skill.name} />
               </a>
-            </li>
-          ))}
-        </motion.ul>
+            ))}
+          </div>
+        </motion.div>
       </motion.section>
 
       <section className="about-block">

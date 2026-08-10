@@ -253,7 +253,7 @@ h4 {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.04);
   box-shadow: var(--neon-strong);
 }
 
@@ -264,10 +264,43 @@ h4 {
 }
 
 .btn-ghost:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.04);
   background: rgba(var(--accent-rgb), 0.2);
-  border-color: rgba(var(--accent-rgb), 0.55);
-  box-shadow: var(--neon);
+  border-color: rgba(var(--accent-rgb), 0.7);
+  box-shadow: var(--neon-strong);
+}
+
+.btn-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(56, 189, 248, 0.55), rgba(var(--accent-rgb), 0.25));
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  z-index: -1;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px) scale(1.05);
 }
 
 .glass-panel {

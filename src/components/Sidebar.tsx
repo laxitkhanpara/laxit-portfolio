@@ -61,6 +61,16 @@ export function Sidebar() {
           >
             {profile.title}
           </motion.p>
+          <motion.div
+            className="open-to-work"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            aria-label="Open to work"
+          >
+            <span className="open-to-work-dot" aria-hidden />
+            Open to Work
+          </motion.div>
 
           <button
             type="button"
