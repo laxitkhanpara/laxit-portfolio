@@ -137,6 +137,11 @@
   margin-top: 8px;
 }
 
+.point-title {
+  color: var(--text);
+  font-weight: 650;
+}
+
 .experience-stack {
   display: flex;
   flex-wrap: wrap;

@@ -1,7 +1,18 @@
 import { motion } from 'framer-motion'
-import { experience, profile } from '../content'
+import { experience } from '../content'
 import { fadeUp, stagger } from '../motion'
 import './Timeline.css'
+
+function PointText({ text }: { text: string }) {
+  const idx = text.indexOf(': ')
+  if (idx === -1) return <>{text}</>
+  return (
+    <>
+      <strong className="point-title">{text.slice(0, idx + 1)}</strong>
+      {text.slice(idx + 1)}
+    </>
+  )
+}
 
 export function Experience() {
   return (
@@ -43,7 +54,9 @@ export function Experience() {
 
                 <ul className="timeline-points">
                   {job.points.map((p) => (
-                    <li key={p.slice(0, 48)}>{p}</li>
+                    <li key={p.slice(0, 48)}>
+                      <PointText text={p} />
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -51,16 +64,6 @@ export function Experience() {
           ))}
         </motion.ul>
       </section>
-
-      <motion.a
-        className="resume-download"
-        href={profile.resume}
-        download
-        whileHover={{ scale: 1.03, y: -2 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        Download CV
-      </motion.a>
     </article>
   )
 }
