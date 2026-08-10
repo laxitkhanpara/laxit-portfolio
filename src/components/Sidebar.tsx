@@ -49,13 +49,18 @@ export function Sidebar() {
         <div className="sidebar-top">
           <motion.div
             className="avatar-box"
-            aria-hidden
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.15, type: 'spring', stiffness: 160, damping: 14 }}
             whileHover={{ scale: 1.04, rotate: -2 }}
           >
-            <span className="avatar-initials">{initials}</span>
+            {profile.avatar ? (
+              <img className="avatar-img" src={profile.avatar} alt={profile.name} />
+            ) : (
+              <span className="avatar-initials" aria-hidden>
+                {initials}
+              </span>
+            )}
           </motion.div>
           <motion.h1 className="sidebar-name" variants={fadeUp} initial="hidden" animate="show">
             {profile.name}
