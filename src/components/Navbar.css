@@ -1,26 +1,59 @@
-.navbar {
+.article-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-shrink: 0;
+  min-height: var(--nav-h);
+  padding: 0 12px 0 28px;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: rgba(10, 16, 26, 0.45);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  z-index: 5;
+}
+
+.article-header .article-title {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 2px;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.article-header .article-title::after {
+  content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  left: auto;
-  height: var(--nav-h);
+  left: 2px;
+  bottom: -10px;
+  width: 36px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: var(--neon);
+}
+
+.navbar {
   display: flex;
   align-items: stretch;
+  align-self: stretch;
   gap: 2px;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  padding: 0 10px;
-  background: rgba(10, 16, 26, 0.78);
-  border: 1px solid var(--border);
-  border-radius: 0 var(--radius);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  z-index: 5;
+  margin-left: auto;
+  height: var(--nav-h);
+  padding: 0 4px;
+  background: transparent;
+  border: 0;
 }
 
 .navbar button {
   position: relative;
-  padding: 0 12px;
+  padding: 0 14px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 500;
@@ -40,9 +73,9 @@
 .navbar button.active::after {
   content: '';
   position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 10px;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
   height: 2px;
   border-radius: 2px;
   background: linear-gradient(90deg, var(--accent), transparent);
@@ -50,6 +83,20 @@
 }
 
 @media (max-width: 1024px) {
+  .article-header {
+    min-height: 52px;
+    padding: 14px 18px 12px;
+  }
+
+  .article-header .article-title {
+    font-size: 1.25rem;
+  }
+
+  .article-header .article-title::after {
+    bottom: -8px;
+    width: 32px;
+  }
+
   .navbar {
     position: fixed;
     top: auto;
@@ -57,10 +104,17 @@
     left: 0;
     right: 0;
     height: calc(60px + env(safe-area-inset-bottom, 0px));
+    margin: 0;
     padding: 0 6px env(safe-area-inset-bottom, 0px);
     border-radius: 16px 16px 0 0;
     justify-content: space-around;
+    background: rgba(10, 16, 26, 0.92);
+    border: 1px solid var(--border);
+    border-bottom: 0;
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
     box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+    z-index: 20;
   }
 
   .navbar button {

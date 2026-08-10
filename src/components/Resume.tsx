@@ -6,10 +6,6 @@ import './Resume.css'
 export function Resume() {
   return (
     <article className="resume">
-      <header>
-        <h2 className="article-title">Resume</h2>
-      </header>
-
       <section className="timeline">
         <div className="title-wrapper">
           <div className="icon-box">

@@ -64,10 +64,6 @@ function IconGithub() {
 export function About() {
   return (
     <article className="about">
-      <header>
-        <h2 className="article-title">About</h2>
-      </header>
-
       <motion.section
         className="about-hero glass-panel"
         variants={stagger}

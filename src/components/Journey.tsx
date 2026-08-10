@@ -69,10 +69,6 @@ export function Journey() {
 
   return (
     <article className="journey">
-      <header>
-        <h2 className="article-title">Journey</h2>
-      </header>
-
       <p className="journey-intro">
         A visual timeline of education, hackathons, certifications, product work, awards, and community — one
         milestone at a time.

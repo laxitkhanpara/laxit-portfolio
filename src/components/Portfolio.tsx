@@ -16,10 +16,6 @@ export function Portfolio() {
 
   return (
     <article className="portfolio">
-      <header>
-        <h2 className="article-title">Portfolio</h2>
-      </header>
-
       <ul className="filter-list">
         {filters.map((f) => (
           <li key={f}>

@@ -22,10 +22,6 @@ export function Contact() {
 
   return (
     <article className="contact">
-      <header>
-        <h2 className="article-title">Contact</h2>
-      </header>
-
       <motion.section
         className="contact-map"
         initial={{ opacity: 0, scale: 0.96 }}
