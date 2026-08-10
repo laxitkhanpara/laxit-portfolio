@@ -30,11 +30,6 @@ export function Education() {
                   <br />
                   {item.detail}
                 </p>
-                {item.image ? (
-                  <figure className="education-photo">
-                    <img src={item.image} alt={item.imageAlt ?? item.school} loading="lazy" />
-                  </figure>
-                ) : null}
               </div>
             </motion.li>
           ))}
