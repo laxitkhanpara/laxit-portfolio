@@ -137,15 +137,6 @@
   transform: translateY(-1px);
 }
 
-.about-ctas {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
 .about-skills {
   position: relative;
   z-index: 1;
@@ -347,14 +338,6 @@
   .service-icon-box {
     width: 40px;
     height: 40px;
-  }
-
-  .about-ctas {
-    flex-direction: column;
-  }
-
-  .about-ctas .btn {
-    width: 100%;
   }
 
   .about-hero {
