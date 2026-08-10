@@ -113,6 +113,18 @@ export const education = [
     period: '2021 — 2025',
     detail: 'CGPA: 8.39 / 10.0 · Vadodara, Gujarat',
   },
+  {
+    school: 'Hariom School of Science',
+    degree: 'HSC',
+    period: '2020',
+    detail: '78%',
+  },
+  {
+    school: 'LPD School',
+    degree: 'SSC',
+    period: '2018',
+    detail: '84%',
+  },
 ]
 
 export const experience = [
