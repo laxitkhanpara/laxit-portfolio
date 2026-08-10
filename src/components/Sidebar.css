@@ -29,8 +29,8 @@
 
 .avatar-wrap {
   position: relative;
-  width: 168px;
-  height: 168px;
+  width: 200px;
+  height: 200px;
   margin: 4px auto 16px;
   padding: 0;
   border: 0;
@@ -42,7 +42,7 @@
 .avatar-ring {
   position: absolute;
   inset: 0;
-  border-radius: 36px;
+  border-radius: 42px;
   background: linear-gradient(
     145deg,
     rgba(var(--accent-rgb), 0.95),
@@ -55,16 +55,16 @@
   content: '';
   position: absolute;
   inset: 3px;
-  border-radius: 33px;
+  border-radius: 39px;
   background: var(--card);
 }
 
 .avatar-box {
   position: relative;
   z-index: 1;
-  width: 150px;
-  height: 150px;
-  border-radius: 30px;
+  width: 180px;
+  height: 180px;
+  border-radius: 36px;
   background:
     linear-gradient(145deg, #3a3a3c, #1a1a1b),
     var(--jet);
@@ -86,7 +86,7 @@
 }
 
 .avatar-initials {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: -0.04em;
@@ -287,27 +287,27 @@
   }
 
   .avatar-wrap {
-    width: 148px;
-    height: 148px;
+    width: 168px;
+    height: 168px;
     margin-bottom: 12px;
   }
 
   .avatar-box {
-    width: 132px;
-    height: 132px;
-    border-radius: 28px;
-  }
-
-  .avatar-ring {
+    width: 150px;
+    height: 150px;
     border-radius: 32px;
   }
 
+  .avatar-ring {
+    border-radius: 36px;
+  }
+
   .avatar-ring::after {
-    border-radius: 29px;
+    border-radius: 33px;
   }
 
   .avatar-initials {
-    font-size: 36px;
+    font-size: 40px;
   }
 }
 
@@ -320,27 +320,27 @@
 /* Short desktops: keep left panel fitted, no scroll */
 @media (min-width: 1025px) and (max-height: 760px) {
   .avatar-wrap {
-    width: 150px;
-    height: 150px;
+    width: 176px;
+    height: 176px;
     margin-bottom: 10px;
   }
 
   .avatar-box {
-    width: 134px;
-    height: 134px;
-    border-radius: 24px;
+    width: 158px;
+    height: 158px;
+    border-radius: 32px;
   }
 
   .avatar-ring {
-    border-radius: 28px;
+    border-radius: 36px;
   }
 
   .avatar-ring::after {
-    border-radius: 25px;
+    border-radius: 33px;
   }
 
   .avatar-initials {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .sidebar-name {
