@@ -23,7 +23,7 @@
 }
 
 .service-item:hover {
-  border-color: #ffdb7066;
+  border-color: rgba(var(--accent-rgb), 0.4);
   box-shadow: 0 14px 34px hsla(0, 0%, 0%, 0.28);
 }
 
@@ -123,7 +123,7 @@
 }
 
 .clients-item a:hover {
-  border-color: #ffdb7066;
+  border-color: rgba(var(--accent-rgb), 0.4);
   background: var(--accent-soft);
 }
 

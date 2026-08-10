@@ -119,7 +119,7 @@
   height: 100%;
   width: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), #ffb84d);
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
 }
 
 .resume-download {
@@ -128,11 +128,11 @@
   padding: 12px 20px;
   border-radius: 12px;
   background: var(--accent-soft);
-  border: 1px solid #ffdb7066;
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
   color: var(--accent);
   font-weight: 500;
 }
 
 .resume-download:hover {
-  background: #ffdb7038;
+  background: rgba(var(--accent-rgb), 0.22);
 }

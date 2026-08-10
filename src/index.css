@@ -1,14 +1,16 @@
 :root {
-  --bg: #121212;
-  --border: #383838;
-  --card: #1e1e1f;
-  --card-soft: #222224;
-  --jet: #2a2a2c;
-  --text: #fafafa;
-  --text2: #d6d6d6;
-  --muted: #9f9f9f;
-  --accent: #ffdb70;
-  --accent-soft: #ffdb7026;
+  --bg: #0f1214;
+  --border: #2e3538;
+  --card: #171c1f;
+  --card-soft: #1b2124;
+  --jet: #242b2e;
+  --text: #f4f7f7;
+  --text2: #c9d2d2;
+  --muted: #8f9a9c;
+  --accent: #6fd3c2;
+  --accent-strong: #4eb9a8;
+  --accent-soft: rgba(111, 211, 194, 0.14);
+  --accent-rgb: 111, 211, 194;
   --shadow: 0 24px 80px hsla(0, 0%, 0%, 0.35);
   --radius: 20px;
   --radius-sm: 14px;
@@ -102,7 +104,7 @@ h4 {
 .bg-orb-a {
   top: -120px;
   left: -80px;
-  background: radial-gradient(circle, rgba(255, 219, 112, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.35), transparent 70%);
 }
 
 .bg-orb-b {
@@ -165,7 +167,7 @@ h4 {
 }
 
 .article-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent), #ffb84d);
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
   border-radius: 8px;
   border: 2px solid #2a2a2c;
 }

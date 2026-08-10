@@ -7,7 +7,7 @@
   border-radius: 14px;
   border: 1px solid var(--border);
   background:
-    radial-gradient(circle at 30% 40%, rgba(255, 219, 112, 0.12), transparent 40%),
+    radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb), 0.12), transparent 40%),
     linear-gradient(145deg, #252528, #171719);
   display: grid;
   place-content: center;
