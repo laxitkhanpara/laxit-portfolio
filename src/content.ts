@@ -215,7 +215,7 @@ export const skillIcons: { name: string; src: string; href: string; alt: string 
   { name: 'Linux', src: '/assets/skills/linux.svg', href: 'https://www.linux.org/', alt: 'Linux logo' },
 ]
 
-export type ProjectCategory = 'All' | 'Enterprise' | 'Open Source' | 'Hackathon' | 'Apps'
+export type ProjectCategory = 'All' | 'Enterprise' | 'Tools' | 'Hackathon' | 'Apps'
 
 export const projects: {
   title: string
@@ -273,14 +273,14 @@ export const projects: {
   },
   {
     title: 'create-liferay-react-cx',
-    category: 'Open Source',
+    category: 'Tools',
     blurb: 'npm CLI to scaffold Liferay React Client Extensions. Featured on Liferay Blog.',
     stack: 'Java · Node · React · Liferay',
     link: 'https://github.com/laxitkhanpara/create-liferay-react-cx',
   },
   {
     title: 'create-liferay-microservice-cx',
-    category: 'Open Source',
+    category: 'Tools',
     blurb: 'OAuth2-secured microservice Client Extension scaffolder for Liferay DXP.',
     stack: 'Java · Node · OAuth2 · Liferay',
     link: 'https://github.com/laxitkhanpara/create-liferay-microservice-cx',
@@ -299,6 +299,31 @@ export const projects: {
     blurb:
       'Live freelance full-stack UMS with Student, Teacher, and Admin portals — automated grades, attendance, timetable, and PDF marksheets.',
     stack: 'React · Spring Boot · MySQL · MongoDB',
+  },
+]
+
+export const blogPosts: {
+  title: string
+  summary: string
+  href: string
+  source: string
+  tags: string[]
+}[] = [
+  {
+    title: 'Create React Client Extensions in Liferay with One Command',
+    summary:
+      'How to scaffold production-ready Liferay React Client Extensions instantly with the create-liferay-react-cx CLI — featured on the official Liferay blog.',
+    href: 'https://liferay.dev/b/create-react-client-extensions-in-liferay-with-one-command',
+    source: 'Liferay Blog',
+    tags: ['Liferay', 'React', 'CLI', 'Client Extensions'],
+  },
+  {
+    title: 'Skip the Headless API: Manage Liferay Objects Efficiently with ObjectEntryManager',
+    summary:
+      'A practical guide to using ObjectEntryManager for efficient Object CRUD inside Liferay — without round-tripping through Headless APIs.',
+    href: 'https://liferay.dev/b/skip-the-headless-api-manage-liferay-objects-efficiently-with-objectentrymanager',
+    source: 'Liferay Blog',
+    tags: ['Liferay', 'Objects', 'Java', 'DXP'],
   },
 ]
 

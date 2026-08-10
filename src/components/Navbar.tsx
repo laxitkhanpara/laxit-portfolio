@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import './Navbar.css'
 
-export type Tab = 'About' | 'Experience' | 'Education' | 'Portfolio' | 'Journey' | 'Contact'
+export type Tab = 'About' | 'Experience' | 'Education' | 'Projects' | 'Journey' | 'Contact'
 
 const tabs: { id: Tab; short: string; icon: 'user' | 'briefcase' | 'grad' | 'grid' | 'path' | 'mail' }[] = [
   { id: 'About', short: 'About', icon: 'user' },
   { id: 'Experience', short: 'Exp', icon: 'briefcase' },
   { id: 'Education', short: 'Edu', icon: 'grad' },
-  { id: 'Portfolio', short: 'Port', icon: 'grid' },
+  { id: 'Projects', short: 'Proj', icon: 'grid' },
   { id: 'Journey', short: 'Path', icon: 'path' },
   { id: 'Contact', short: 'Talk', icon: 'mail' },
 ]

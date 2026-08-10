@@ -5,7 +5,7 @@ import { Navbar, type Tab } from './components/Navbar'
 import { About } from './components/About'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
-import { Portfolio } from './components/Portfolio'
+import { Projects } from './components/Portfolio'
 import { Journey } from './components/Journey'
 import { Contact } from './components/Contact'
 import { pageTransition } from './motion'
@@ -38,7 +38,7 @@ export default function App() {
                 {tab === 'About' ? <About /> : null}
                 {tab === 'Experience' ? <Experience /> : null}
                 {tab === 'Education' ? <Education /> : null}
-                {tab === 'Portfolio' ? <Portfolio /> : null}
+                {tab === 'Projects' ? <Projects /> : null}
                 {tab === 'Journey' ? <Journey /> : null}
                 {tab === 'Contact' ? <Contact /> : null}
               </motion.div>
