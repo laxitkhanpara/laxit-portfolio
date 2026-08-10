@@ -320,6 +320,14 @@ export const projects: {
     stack: 'Liferay · Objects · Java · DXP',
     link: 'https://liferay.dev/b/skip-the-headless-api-manage-liferay-objects-efficiently-with-objectentrymanager',
   },
+  {
+    title: 'Beyond GET: Could HTTP QUERY (RFC 10008) Improve Liferay Headless APIs?',
+    category: 'Blog',
+    blurb:
+      'Exploring whether the HTTP QUERY method (RFC 10008) could unlock safer, more expressive search and filter patterns for Liferay Headless APIs.',
+    stack: 'Liferay · Headless · HTTP · RFC 10008',
+    link: 'https://liferay.dev/b/beyond-get-could-http-query-rfc-10008-improve-liferay-headless-apis-',
+  },
 ]
 
 export const certifications = [
