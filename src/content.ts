@@ -9,12 +9,50 @@ export const profile = {
   avatar: '/media/profile/laxit-profile.jpg?v=4',
   socials: {
     github: 'https://github.com/laxitkhanpara',
-    linkedin: 'https://www.linkedin.com/in/laxit-khanpara',
+    linkedin: 'https://linkedin.com/in/laxit-khanpara',
+    instagram: 'https://instagram.com/laxu_smuk',
+    youtube: 'https://youtube.com/@laxitkhanpara',
+    discord: 'https://discord.gg/DasnqH37RZ',
+    leetcode: 'https://leetcode.com/u/laxitkhanpara3646/',
   },
   about: `I'm a self-driven Software Engineer with 3+ years of experience designing and delivering high-throughput, low-latency enterprise applications.
 
 I take end-to-end ownership on live B2B CPaaS platforms — Spring Boot, Kafka, React, AWS — and help engineering teams move faster with AI-assisted development workflows without sacrificing quality.`,
 }
+
+/** Colorful contact / social icons shown in Contact + Sidebar */
+export const socialLinks: { name: string; href: string; icon: string }[] = [
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/in/laxit-khanpara',
+    icon: '/assets/social/linkedin.svg',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/laxu_smuk',
+    icon: '/assets/social/instagram.svg',
+  },
+  {
+    name: 'YouTube',
+    href: 'https://youtube.com/@laxitkhanpara',
+    icon: '/assets/social/youtube.svg',
+  },
+  {
+    name: 'Email',
+    href: 'mailto:laxitkhanpara3646@gmail.com',
+    icon: '/assets/social/gmail.svg',
+  },
+  {
+    name: 'Discord',
+    href: 'https://discord.gg/DasnqH37RZ',
+    icon: '/assets/social/discord.svg',
+  },
+  {
+    name: 'LeetCode',
+    href: 'https://leetcode.com/u/laxitkhanpara3646/',
+    icon: '/assets/social/leetcode.png',
+  },
+]
 
 export const services = [
   {

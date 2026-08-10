@@ -1,7 +1,7 @@
 import type { FormEvent } from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { profile } from '../content'
+import { profile, socialLinks } from '../content'
 import { fadeUp, stagger } from '../motion'
 import './Contact.css'
 
@@ -38,6 +38,25 @@ export function Contact() {
         </div>
       </motion.section>
 
+      <section className="contact-socials">
+        <h3 className="section-title">Connect</h3>
+        <motion.ul className="social-icon-list" variants={stagger} initial="hidden" animate="show">
+          {socialLinks.map((s) => (
+            <motion.li key={s.name} variants={fadeUp} whileHover={{ y: -4, scale: 1.06 }}>
+              <a
+                href={s.href}
+                target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={s.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                aria-label={s.name}
+                title={s.name}
+              >
+                <img src={s.icon} alt="" width={52} height={40} />
+              </a>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </section>
+
       <section>
         <h3 className="section-title">Contact Form</h3>
         <motion.form
@@ -66,16 +85,6 @@ export function Contact() {
           </motion.button>
           {sent ? <p className="form-note">Opening your email client…</p> : null}
         </motion.form>
-
-        <div className="contact-alt">
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={profile.socials.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a href={profile.socials.github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-        </div>
       </section>
     </article>
   )

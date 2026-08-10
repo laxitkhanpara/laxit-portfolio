@@ -252,18 +252,39 @@
 
 .social-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  align-items: center;
+  gap: 8px;
   padding-top: 2px;
+  margin: 0;
+  list-style: none;
 }
 
 .social-list a {
-  color: var(--muted);
-  transition: color var(--transition);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-soft);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
 }
 
 .social-list a:hover {
-  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.08);
+  transform: translateY(-2px);
+}
+
+.social-list img {
+  width: 28px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  /* keep brand colors — do not desaturate */
+  filter: none;
 }
 
 .sidebar-cta {

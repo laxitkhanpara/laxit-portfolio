@@ -97,6 +97,45 @@
   font-size: 14px;
 }
 
+.contact-socials {
+  margin-bottom: 28px;
+}
+
+.social-icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-icon-list a {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-soft);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.social-icon-list a:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.social-icon-list img {
+  width: 40px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  /* keep brand colors — do not desaturate */
+  filter: none;
+}
+
 @media (max-width: 640px) {
   .input-wrapper {
     grid-template-columns: 1fr;
