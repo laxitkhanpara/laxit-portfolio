@@ -147,9 +147,7 @@ export function Sidebar() {
             </div>
             <div>
               <p className="contact-title">Location</p>
-              <address className="contact-text" style={{ fontStyle: 'normal' }}>
-                {profile.location}
-              </address>
+                  <address className="contact-text">{profile.location}</address>
             </div>
           </motion.li>
         </motion.ul>

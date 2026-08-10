@@ -16,7 +16,10 @@
   justify-content: space-between;
   height: 100%;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-rgb), 0.45) transparent;
 }
 
 .sidebar-top {
@@ -177,18 +180,27 @@
 
 .contacts-list {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   text-align: left;
-  flex: 0 1 auto;
-  min-height: 0;
-  overflow: hidden;
+  flex: 0 0 auto;
+  min-height: auto;
+  overflow: visible;
+  padding: 2px 0;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   min-width: 0;
+}
+
+.contact-item > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
 }
 
 .icon-box {
@@ -210,14 +222,18 @@
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .contact-link,
 .contact-text {
-  margin: 2px 0 0;
+  margin: 0;
   color: var(--text2);
   font-size: 13px;
+  line-height: 1.35;
   word-break: break-word;
+  overflow-wrap: anywhere;
+  font-style: normal;
 }
 
 .contact-link:hover {
