@@ -414,7 +414,7 @@ export const journey: JourneyItem[] = [
   {
     id: 'aixtor',
     year: 'Dec 2024 — Present',
-    title: 'Java Developer · Aixtor Technology',
+    title: 'Associate Software Consultant · Aixtor Technology',
     tag: 'Career',
     story:
       'Owning live B2B CPaaS / Voice AI systems on Integrari — Kafka messaging, campaign dialing, RCS devices, and GenAI workflow coaching.',
