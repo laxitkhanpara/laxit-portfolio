@@ -57,8 +57,14 @@ export function About() {
         initial="hidden"
         animate="show"
       >
+        <motion.p className="about-headline" variants={fadeUp}>
+          <span className="about-headline-emoji" aria-hidden>
+            🤖
+          </span>
+          {profile.headline}
+        </motion.p>
         {profile.about.split('\n\n').map((p) => (
-          <motion.p key={p.slice(0, 24)} variants={fadeUp}>
+          <motion.p className="about-body" key={p.slice(0, 24)} variants={fadeUp}>
             {p}
           </motion.p>
         ))}

@@ -15,9 +15,11 @@ export const profile = {
     discord: 'https://discord.gg/DasnqH37RZ',
     leetcode: 'https://leetcode.com/u/laxitkhanpara3646/',
   },
-  about: `I'm a self-driven Software Engineer with 3+ years of experience designing and delivering high-throughput, low-latency enterprise applications.
+  headline:
+    'Software Engineer — building AI-driven products on scalable backend systems',
+  about: `I build production systems where backend engineering meets applied AI — Java/Spring services, event-driven pipelines, and LLM-powered features that ship real product value. I don't anchor to one technology; I anchor to solving the problem well.
 
-I take end-to-end ownership on live B2B CPaaS platforms — Spring Boot, Kafka, React, AWS — and help engineering teams move faster with AI-assisted development workflows without sacrificing quality.`,
+From live B2B CPaaS platforms to open-source developer tools, I take end-to-end ownership — Spring Boot, Kafka, React, AWS — and help teams ship faster with AI-assisted workflows without sacrificing quality.`,
 }
 
 /** Colorful contact / social icons shown in Contact + Sidebar */
@@ -58,22 +60,22 @@ export const services = [
   {
     icon: 'code',
     title: 'Backend Engineering',
-    text: 'High-throughput Spring Boot services, Kafka pipelines, multithreading, and production-grade APIs.',
+    text: 'Production Java/Spring services, Kafka pipelines, and APIs built for throughput, reliability, and scale.',
   },
   {
     icon: 'web',
-    title: 'Full-Stack Web',
-    text: 'React + Spring Boot products with secure auth, RBAC, and clean end-to-end delivery.',
+    title: 'Full-Stack Products',
+    text: 'React + Spring Boot products with secure auth, clean architecture, and end-to-end ownership.',
   },
   {
     icon: 'design',
     title: 'Liferay DXP',
-    text: 'Enterprise portals, Client Extensions, and open-source scaffolding CLIs for Liferay developers.',
+    text: 'Enterprise portals, Client Extensions, and open-source scaffolding CLIs for Liferay teams.',
   },
   {
     icon: 'mobile',
-    title: 'AI-Assisted Delivery',
-    text: 'GenAI workflow adoption, Voice AI campaign systems, and measurable engineering velocity gains.',
+    title: 'Applied AI',
+    text: 'LLM-powered features, Voice AI campaigns, and GenAI workflows that deliver measurable product value.',
   },
 ]
 
