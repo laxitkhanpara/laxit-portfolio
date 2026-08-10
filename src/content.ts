@@ -112,6 +112,8 @@ export const education = [
     degree: 'B.Tech — Information Technology',
     period: '2021 — 2025',
     detail: 'CGPA: 8.39 / 10.0 · Vadodara, Gujarat',
+    image: '/media/journey/education-graduation.jpg',
+    imageAlt: 'Laxit Khanpara at graduation — Parul Institute of Engineering and Technology',
   },
 ]
 

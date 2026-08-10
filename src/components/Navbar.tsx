@@ -1,8 +1,8 @@
 import './Navbar.css'
 
-export type Tab = 'About' | 'Resume' | 'Portfolio' | 'Journey' | 'Contact'
+export type Tab = 'About' | 'Experience' | 'Education' | 'Portfolio' | 'Journey' | 'Contact'
 
-const tabs: Tab[] = ['About', 'Resume', 'Portfolio', 'Journey', 'Contact']
+const tabs: Tab[] = ['About', 'Experience', 'Education', 'Portfolio', 'Journey', 'Contact']
 
 export function Navbar({ active, onChange }: { active: Tab; onChange: (tab: Tab) => void }) {
   return (

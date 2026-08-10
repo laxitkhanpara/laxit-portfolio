@@ -3,7 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Sidebar } from './components/Sidebar'
 import { Navbar, type Tab } from './components/Navbar'
 import { About } from './components/About'
-import { Resume } from './components/Resume'
+import { Experience } from './components/Experience'
+import { Education } from './components/Education'
 import { Portfolio } from './components/Portfolio'
 import { Journey } from './components/Journey'
 import { Contact } from './components/Contact'
@@ -35,7 +36,8 @@ export default function App() {
                 transition={pageTransition.transition}
               >
                 {tab === 'About' ? <About /> : null}
-                {tab === 'Resume' ? <Resume /> : null}
+                {tab === 'Experience' ? <Experience /> : null}
+                {tab === 'Education' ? <Education /> : null}
                 {tab === 'Portfolio' ? <Portfolio /> : null}
                 {tab === 'Journey' ? <Journey /> : null}
                 {tab === 'Contact' ? <Contact /> : null}
