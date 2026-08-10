@@ -1,8 +1,9 @@
 .about-hero {
   position: relative;
   margin-bottom: 28px;
-  padding: 26px 24px 20px;
-  overflow: hidden;
+  padding: 24px 22px 18px;
+  /* keep decorative glow clipped horizontally without cutting the skills row */
+  overflow: visible;
 }
 
 .about-hero::after {
@@ -14,6 +15,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, rgba(var(--accent-rgb), 0.18), transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .about-role {
@@ -138,15 +140,78 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .about-skills {
   position: relative;
   z-index: 1;
-  margin-top: 6px;
-  padding-top: 16px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  padding: 14px 0 4px;
   border-top: 1px solid rgba(var(--accent-rgb), 0.16);
+}
+
+/* Infinite skills marquee */
+.skills-marquee {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 6px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.skills-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 6px;
+  padding: 2px 0;
+  animation: skillsMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+.skills-marquee-item {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  padding: 7px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skills-marquee-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: none;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.skills-marquee-item:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.1);
+  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.35);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.skills-marquee-item:hover img {
+  filter: drop-shadow(0 0 8px rgba(var(--accent-rgb), 0.55));
+  transform: scale(1.06);
 }
 
 .about-block {
@@ -227,62 +292,6 @@
   box-shadow: var(--neon);
 }
 
-/* Infinite skills marquee */
-.skills-marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.skills-marquee-track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  gap: 4px;
-  animation: skillsMarquee 32s linear infinite;
-  will-change: transform;
-}
-
-.skills-marquee:hover .skills-marquee-track {
-  animation-play-state: paused;
-}
-
-.skills-marquee-item {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  padding: 8px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-.skills-marquee-item img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  filter: none;
-  transition: filter 0.25s ease, transform 0.25s ease;
-}
-
-.skills-marquee-item:hover {
-  border-color: rgba(var(--accent-rgb), 0.45);
-  background: rgba(var(--accent-rgb), 0.1);
-  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.35);
-  transform: translateY(-2px) scale(1.06);
-}
-
-.skills-marquee-item:hover img {
-  filter: drop-shadow(0 0 8px rgba(var(--accent-rgb), 0.55));
-  transform: scale(1.08);
-}
-
 @keyframes skillsMarquee {
   from {
     transform: translateX(0);
@@ -315,21 +324,26 @@
     padding: 16px;
   }
 
-  .about-hero {
-    padding: 22px 18px 18px;
-  }
-
   .about-ctas {
     flex-direction: column;
   }
 
+  .about-hero {
+    padding: 20px 16px 16px;
+  }
+
+  .skills-marquee {
+    min-height: 52px;
+    padding: 4px 0;
+  }
+
   .skills-marquee-item {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
   .skills-marquee-item img {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 }
