@@ -68,6 +68,15 @@ export function About() {
             {p}
           </motion.p>
         ))}
+        <motion.ul className="clients-list about-skills" variants={fadeUp} aria-label="Skills">
+          {skillIcons.map((skill) => (
+            <li className="clients-item" key={skill.name}>
+              <a href={skill.href} target="_blank" rel="noreferrer" title={skill.name}>
+                <img src={skill.src} alt={skill.alt} title={skill.name} />
+              </a>
+            </li>
+          ))}
+        </motion.ul>
       </motion.section>
 
       <section>
@@ -90,19 +99,6 @@ export function About() {
             </motion.li>
           ))}
         </motion.ul>
-      </section>
-
-      <section className="clients">
-        <h3 className="section-title">Skills</h3>
-        <ul className="clients-list has-scrollbar">
-          {skillIcons.map((skill) => (
-            <li className="clients-item" key={skill.name}>
-              <a href={skill.href} target="_blank" rel="noreferrer" title={skill.name}>
-                <img src={skill.src} alt={skill.alt} title={skill.name} />
-              </a>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="about-extra">

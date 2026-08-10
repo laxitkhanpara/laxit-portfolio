@@ -30,8 +30,14 @@
   line-height: 1.7;
 }
 
-.about-body:last-child {
+.about-body:last-of-type {
   margin-bottom: 0;
+}
+
+.about-skills {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.18);
 }
 
 .service-list {
@@ -98,11 +104,6 @@
 }
 
 /* Skills icon strip — centered, tight, no scroll */
-.clients {
-  margin-top: 32px;
-  margin-bottom: 8px;
-}
-
 .clients-list {
   display: flex;
   flex-wrap: wrap;
@@ -110,7 +111,7 @@
   align-items: center;
   gap: 0;
   margin: 0;
-  padding: 10px 0 6px;
+  padding: 4px 0 0;
   list-style: none;
   overflow: visible;
 }
