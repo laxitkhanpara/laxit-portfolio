@@ -7,13 +7,15 @@
   border-radius: 14px;
   border: 1px solid var(--border);
   background:
-    radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb), 0.12), transparent 40%),
-    linear-gradient(145deg, #252528, #171719);
+    radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb), 0.16), transparent 42%),
+    linear-gradient(145deg, rgba(22, 32, 48, 0.9), rgba(10, 16, 26, 0.9));
+  backdrop-filter: blur(12px);
   display: grid;
   place-content: center;
   text-align: center;
   gap: 6px;
   padding: 24px;
+  box-shadow: var(--neon);
 }
 
 .map-placeholder strong {
@@ -67,15 +69,15 @@
   gap: 8px;
   padding: 12px 18px;
   border-radius: 12px;
-  background: var(--card-soft);
-  border: 1px solid var(--border);
-  color: var(--accent);
-  font-weight: 500;
-  box-shadow: -3px 3px 8px hsla(0, 0%, 0%, 0.2);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  border: 1px solid transparent;
+  color: #041016;
+  font-weight: 600;
+  box-shadow: var(--neon);
 }
 
 .form-btn:hover {
-  background: var(--jet);
+  box-shadow: var(--neon-strong);
 }
 
 .form-note {
@@ -126,12 +128,14 @@
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--card-soft);
-  transition: border-color var(--transition), background var(--transition);
+  backdrop-filter: blur(8px);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
 .social-icon-list a:hover {
   border-color: rgba(var(--accent-rgb), 0.45);
   background: rgba(var(--accent-rgb), 0.08);
+  box-shadow: var(--neon);
 }
 
 .social-icon-list img {

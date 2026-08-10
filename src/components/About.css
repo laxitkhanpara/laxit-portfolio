@@ -1,75 +1,159 @@
-.about-text {
-  margin-bottom: 28px;
-  padding: 20px 22px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(var(--accent-rgb), 0.22);
-  background:
-    linear-gradient(135deg, rgba(var(--accent-rgb), 0.1), transparent 55%),
-    var(--card-soft);
-  box-shadow: 0 10px 28px hsla(0, 0%, 0%, 0.2);
+.about-hero {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 28px 26px 22px;
+  overflow: hidden;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  inset: -40% auto auto -20%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.about-role {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+  font-family: var(--ff-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--neon);
 }
 
 .about-headline {
+  position: relative;
+  z-index: 1;
   margin: 0 0 14px;
-  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
-  font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
   color: var(--text);
-}
-
-.about-headline-emoji {
-  margin-right: 8px;
+  max-width: 28ch;
+  background: linear-gradient(120deg, #fff 30%, var(--accent) 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .about-body {
-  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 18px;
+  max-width: 62ch;
   font-weight: 400;
   color: var(--text2);
-  font-size: 15px;
+  font-size: 15.5px;
   line-height: 1.7;
 }
 
-.about-body:last-of-type {
-  margin-bottom: 0;
+.tech-badges {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-badges li span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.55);
+  color: var(--text2);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.tech-badges li span:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  color: var(--accent);
+  box-shadow: var(--neon);
+  transform: translateY(-1px);
+}
+
+.about-ctas {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .about-skills {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.18);
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.16);
+}
+
+.about-block {
+  margin-bottom: 8px;
 }
 
 .service-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 16px;
 }
 
 .service-item {
   display: flex;
   gap: 14px;
-  padding: 22px;
-  border-radius: var(--radius-sm);
-  background: var(--card-soft);
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.18);
+  padding: 20px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-item:hover {
   border-color: rgba(var(--accent-rgb), 0.4);
-  box-shadow: 0 14px 34px hsla(0, 0%, 0%, 0.28);
+  box-shadow: var(--neon);
 }
 
 .service-icon-box {
   color: var(--accent);
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-item:hover .service-icon-box {
-  transform: scale(1.08) rotate(-4deg);
+  transform: scale(1.06);
+  box-shadow: var(--neon);
 }
 
 .service-item-title {
@@ -82,7 +166,7 @@
   margin: 0;
   color: var(--muted);
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .about-extra {
@@ -98,9 +182,16 @@
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: var(--jet);
+  background: var(--card-soft);
   color: var(--text2);
   font-size: 14px;
+  backdrop-filter: blur(8px);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.chip-list li:hover {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  box-shadow: var(--neon);
 }
 
 /* Skills icon strip — centered, tight, no scroll */
@@ -125,38 +216,30 @@
 .clients-item a {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   padding: 6px;
   border-radius: 10px;
   border: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
 .clients-item a:hover {
   border-color: rgba(var(--accent-rgb), 0.4);
   background: var(--accent-soft);
+  box-shadow: var(--neon);
 }
 
 .clients-item img {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   filter: none;
   transition: transform 0.25s ease;
 }
 
 .clients-item a:hover img {
-  animation: skill-zoom 1.6s ease-in-out infinite alternate;
-}
-
-@keyframes skill-zoom {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.12);
-  }
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -168,10 +251,17 @@
     padding: 16px;
   }
 
+  .about-hero {
+    padding: 22px 18px 18px;
+  }
+
+  .about-ctas {
+    flex-direction: column;
+  }
+
   .clients-item a {
     width: 42px;
     height: 42px;
-    padding: 5px;
   }
 
   .clients-item img {

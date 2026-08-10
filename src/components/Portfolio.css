@@ -21,6 +21,8 @@
 .filter-list button.active {
   color: var(--accent);
   background: var(--accent-soft);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  box-shadow: var(--neon);
 }
 
 .project-list {
@@ -105,7 +107,7 @@
 
 .project-item:hover .project-cover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px hsla(0, 0%, 0%, 0.35);
+  box-shadow: 0 14px 30px hsla(0, 0%, 0%, 0.35), var(--neon);
 }
 
 .project-title {

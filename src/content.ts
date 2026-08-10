@@ -16,10 +16,18 @@ export const profile = {
     leetcode: 'https://leetcode.com/u/laxitkhanpara3646/',
   },
   headline:
-    'Software Engineer — building AI-driven products on scalable backend systems',
-  about: `I build production systems where backend engineering meets applied AI — Java/Spring services, event-driven pipelines, and LLM-powered features that ship real product value. I don't anchor to one technology; I anchor to solving the problem well.
-
-From live B2B CPaaS platforms to open-source developer tools, I take end-to-end ownership — Spring Boot, Kafka, React, AWS — and help teams ship faster with AI-assisted workflows without sacrificing quality.`,
+    'Building AI-driven products on scalable backend systems',
+  about: `I build production systems where backend engineering meets applied AI — Java/Spring services, event-driven pipelines, and LLM-powered features that ship real product value.`,
+  techBadges: [
+    'Java',
+    'Spring Boot',
+    'Kafka',
+    'React',
+    'TypeScript',
+    'AWS',
+    'Liferay',
+    'PostgreSQL',
+  ],
 }
 
 /** Colorful contact / social icons shown in Contact + Sidebar */
