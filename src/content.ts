@@ -6,7 +6,7 @@ export const profile = {
   birthday: '2003',
   location: 'Vadodara, Gujarat, India',
   resume: '/Laxit_Khanpara_CV.pdf',
-  avatar: '/media/profile/laxit-profile.jpg?v=2',
+  avatar: '/media/profile/laxit-profile.jpg?v=3',
   socials: {
     github: 'https://github.com/laxitkhanpara',
     linkedin: 'https://www.linkedin.com/in/laxit-khanpara',
