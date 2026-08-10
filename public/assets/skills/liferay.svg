@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>Liferay</title><path fill="#0B5FFF" d="M3 3h6v6H3V3zm7.5 0H21v6h-7.5V3zM3 10.5h6V21H3V10.5zm7.5 0H21V21h-7.5V10.5z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Liferay">
+  <title>Liferay</title>
+  <!-- Official-style Liferay mark (simplified) for dark UI contrast -->
+  <path fill="#0B63CE" d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm0 2.2c4.6 0 8.3 3.7 8.3 8.3S16.6 20.3 12 20.3 3.7 16.6 3.7 12 7.4 3.7 12 3.7z"/>
+  <path fill="#0B63CE" d="M12 6.2a5.8 5.8 0 1 0 0 11.6 5.8 5.8 0 0 0 0-11.6zm0 2.1a3.7 3.7 0 1 1 0 7.4 3.7 3.7 0 0 1 0-7.4z"/>
+  <circle cx="12" cy="12" r="1.75" fill="#5EEAD4"/>
+</svg>
