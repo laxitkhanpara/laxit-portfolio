@@ -129,35 +129,45 @@ export const education = [
 
 export const experience = [
   {
-    role: 'Java Developer',
+    role: 'Associate Software Consultant',
     company: 'Aixtor Technology',
     period: 'Dec 2024 — Present',
+    stack: [
+      'Java 17+',
+      'Spring Boot',
+      'Kafka',
+      'Hibernate',
+      'JPA',
+      'MySQL',
+      'PostgreSQL',
+      'AWS',
+      'React.js',
+      'Redux Toolkit',
+      'Angular',
+      'Liferay DXP',
+      'OAuth2',
+      'Docker',
+      'Kubernetes',
+    ],
     points: [
-      'Architected AI voice-agent call scheduling with concurrent pools — ~10x faster batch completion.',
-      'Scaled realtime omnichannel campaign messaging using Kafka, Meta API, and Google RCS.',
-      'Built automated sequential module deployment — 95% less release overhead.',
-      'Led GenAI workflow training across engineering — ~30% faster feature cycles.',
-      'Mentored 3+ interns on Core Java, multithreading, and distributed systems.',
+      'CPaaS Service Portal: Built a centralized B2B enterprise communication platform with Spring Boot microservices for WhatsApp and Google RCS — template management, campaign execution, and messaging workflows; designed OAuth2 + JWT REST APIs with a Token Exchange Service, modelled entities with Spring Data JPA & PostgreSQL, and orchestrated flows via a state-machine Workflow Service.',
+      'Voice AI Automated Calling Platform: Integrated a third-party Voice AI Agent API for automated conversational outbound calls; engineered timezone detection from mobile country codes to drive a Spring Scheduler that triggers AI-agent calls only inside valid calling windows.',
+      'Multi-Channel Messaging Integration: Built React modules for Meta WhatsApp Business API and Google RCS (rich cards, carousels), routed inbound webhooks through Apache Kafka for async processing, and automated email dispatch via a Spring Boot notification service.',
+      'Calling Infrastructure & Scale: Built a bulk-dispatch microservice with a multi-threaded ExecutorService pool, cutting dispatch time for 100–200 contact batches; supported Excel bulk inputs (Apache POI), auto-retry of failed calls, and real-time performance dashboards.',
+      'Automated Deployment Pipeline: Engineered sequential deployment scripting for order-dependent modules — 95% less developer effort across multi-environment releases; managed Azure DevOps CI/CD and AWS deployments from design through UAT and production support.',
+      'Contributed to a Generative AI-powered CPaaS platform and used LLMs with prompt engineering to accelerate delivery of backend services for enterprise customer-engagement workflows.',
     ],
   },
   {
     role: 'Full Stack Developer',
     company: 'CSCodeTech',
     period: 'Apr 2023 — Sep 2024',
+    stack: ['Java', 'Spring Boot', 'Hibernate', 'JPA', 'MySQL', 'React.js', 'REST APIs'],
     points: [
-      'Shipped Spring Boot + React modules across 10+ application areas.',
-      'Worked end-to-end on production architecture, secure access patterns, and delivery.',
+      'Dynamic RBAC System: Built hierarchical role-based access control with granular permissions across 10+ modules (UMS, Payroll, Attendance, Awards, Job Postings).',
+      'Shipped Spring Boot + React modules end-to-end — production architecture, secure access patterns, and delivery across core application areas.',
     ],
   },
-]
-
-export const skills = [
-  { name: 'Java / Spring Boot', level: 92 },
-  { name: 'Kafka / Messaging', level: 85 },
-  { name: 'React.js', level: 82 },
-  { name: 'MySQL / PostgreSQL', level: 84 },
-  { name: 'AWS / Docker / K8s', level: 78 },
-  { name: 'Liferay DXP', level: 80 },
 ]
 
 /** Icon strip on About (Aakash-style clients list) — SVGs in public/assets/skills/ */
@@ -278,9 +288,17 @@ export const projects: {
   {
     title: 'VastraRent API',
     category: 'Apps',
-    blurb: 'Clothing rental backend with OAuth2 JWT, RBAC, and Docker packaging.',
-    stack: 'Spring Boot · PostgreSQL · Docker',
+    blurb:
+      'Production-grade clothing rental platform API with optimised PostgreSQL schema, OAuth2 JWT auth, RBAC, and Docker containerisation.',
+    stack: 'Spring Boot · PostgreSQL · Docker · OAuth2 · Gradle',
     link: 'https://github.com/laxitkhanpara/VastraRentAPI',
+  },
+  {
+    title: 'Limbdi University Management System',
+    category: 'Apps',
+    blurb:
+      'Live freelance full-stack UMS with Student, Teacher, and Admin portals — automated grades, attendance, timetable, and PDF marksheets.',
+    stack: 'React · Spring Boot · MySQL · MongoDB',
   },
 ]
 

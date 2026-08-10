@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { experience, profile, skills } from '../content'
+import { experience, profile } from '../content'
 import { fadeUp, stagger } from '../motion'
 import './Timeline.css'
 
@@ -30,9 +30,20 @@ export function Experience() {
                   </h4>
                   <span className="timeline-period">{job.period}</span>
                 </div>
+
+                {job.stack?.length ? (
+                  <ul className="experience-stack" aria-label={`${job.company} tech stack`}>
+                    {job.stack.map((tech) => (
+                      <li key={tech}>
+                        <span>{tech}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+
                 <ul className="timeline-points">
                   {job.points.map((p) => (
-                    <li key={p}>{p}</li>
+                    <li key={p.slice(0, 48)}>{p}</li>
                   ))}
                 </ul>
               </div>
@@ -41,36 +52,15 @@ export function Experience() {
         </motion.ul>
       </section>
 
-      <section className="skills-section">
-        <h3 className="section-title">Core skills</h3>
-        <motion.ul className="skills-list" variants={stagger} initial="hidden" animate="show">
-          {skills.map((s) => (
-            <motion.li className="skills-item" key={s.name} variants={fadeUp}>
-              <div className="title-wrapper skills-head">
-                <h4>{s.name}</h4>
-                <data value={s.level}>{s.level}%</data>
-              </div>
-              <div className="skill-progress-bg">
-                <motion.div
-                  className="skill-progress-fill"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${s.level}%` }}
-                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                />
-              </div>
-            </motion.li>
-          ))}
-        </motion.ul>
-        <motion.a
-          className="resume-download"
-          href={profile.resume}
-          download
-          whileHover={{ scale: 1.03, y: -2 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Download CV
-        </motion.a>
-      </section>
+      <motion.a
+        className="resume-download"
+        href={profile.resume}
+        download
+        whileHover={{ scale: 1.03, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        Download CV
+      </motion.a>
     </article>
   )
 }
