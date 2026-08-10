@@ -108,7 +108,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin: 0 0 4px;
 }
 
@@ -270,9 +270,9 @@
 .sidebar-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .sidebar-cta {
