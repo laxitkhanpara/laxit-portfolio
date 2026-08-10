@@ -23,36 +23,42 @@ From live B2B CPaaS platforms to open-source developer tools, I take end-to-end 
 }
 
 /** Colorful contact / social icons shown in Contact + Sidebar */
-export const socialLinks: { name: string; href: string; icon: string }[] = [
+export const socialLinks: { name: string; href: string; icon: string; alt: string }[] = [
   {
     name: 'LinkedIn',
     href: 'https://linkedin.com/in/laxit-khanpara',
     icon: '/assets/social/linkedin.svg',
+    alt: 'LinkedIn profile — Laxit Khanpara',
   },
   {
     name: 'Instagram',
     href: 'https://instagram.com/laxu_smuk',
     icon: '/assets/social/instagram.svg',
+    alt: 'Instagram — Laxit Khanpara',
   },
   {
     name: 'YouTube',
     href: 'https://youtube.com/@laxitkhanpara',
     icon: '/assets/social/youtube.svg',
+    alt: 'YouTube channel — Laxit Khanpara',
   },
   {
     name: 'Email',
     href: 'mailto:laxitkhanpara3646@gmail.com',
     icon: '/assets/social/gmail.svg',
+    alt: 'Email Laxit Khanpara',
   },
   {
     name: 'Discord',
     href: 'https://discord.gg/DasnqH37RZ',
     icon: '/assets/social/discord.svg',
+    alt: 'Discord server invite',
   },
   {
     name: 'LeetCode',
     href: 'https://leetcode.com/u/laxitkhanpara3646/',
     icon: '/assets/social/leetcode.png',
+    alt: 'LeetCode profile — Laxit Khanpara',
   },
 ]
 
@@ -122,23 +128,48 @@ export const skills = [
 ]
 
 /** Icon strip on About (Aakash-style clients list) — SVGs in public/assets/skills/ */
-export const skillIcons: { name: string; src: string; href: string }[] = [
-  { name: 'Java', src: '/assets/skills/java.svg', href: 'https://www.java.com/' },
-  { name: 'Spring Boot', src: '/assets/skills/springboot.svg', href: 'https://spring.io/projects/spring-boot' },
-  { name: 'Liferay', src: '/assets/skills/liferay.svg', href: 'https://www.liferay.com/' },
-  { name: 'Apache Kafka', src: '/assets/skills/apachekafka.svg', href: 'https://kafka.apache.org/' },
-  { name: 'React', src: '/assets/skills/react.svg', href: 'https://react.dev/' },
-  { name: 'TypeScript', src: '/assets/skills/typescript.svg', href: 'https://www.typescriptlang.org/' },
-  { name: 'Node.js', src: '/assets/skills/nodedotjs.svg', href: 'https://nodejs.org/' },
-  { name: 'MySQL', src: '/assets/skills/mysql.svg', href: 'https://www.mysql.com/' },
-  { name: 'PostgreSQL', src: '/assets/skills/postgresql.svg', href: 'https://www.postgresql.org/' },
-  { name: 'AWS', src: '/assets/skills/aws.svg', href: 'https://aws.amazon.com/' },
-  { name: 'Docker', src: '/assets/skills/docker.svg', href: 'https://www.docker.com/' },
-  { name: 'Kubernetes', src: '/assets/skills/kubernetes.svg', href: 'https://kubernetes.io/' },
-  { name: 'Git', src: '/assets/skills/git.svg', href: 'https://git-scm.com/' },
-  { name: 'Postman', src: '/assets/skills/postman.svg', href: 'https://www.postman.com/' },
-  { name: 'Redis', src: '/assets/skills/redis.svg', href: 'https://redis.io/' },
-  { name: 'Linux', src: '/assets/skills/linux.svg', href: 'https://www.linux.org/' },
+export const skillIcons: { name: string; src: string; href: string; alt: string }[] = [
+  { name: 'Java', src: '/assets/skills/java.svg', href: 'https://www.java.com/', alt: 'Java programming language logo' },
+  {
+    name: 'Spring Boot',
+    src: '/assets/skills/springboot.svg',
+    href: 'https://spring.io/projects/spring-boot',
+    alt: 'Spring Boot framework logo',
+  },
+  { name: 'Liferay', src: '/assets/skills/liferay.svg', href: 'https://www.liferay.com/', alt: 'Liferay DXP logo' },
+  {
+    name: 'Apache Kafka',
+    src: '/assets/skills/apachekafka.svg',
+    href: 'https://kafka.apache.org/',
+    alt: 'Apache Kafka logo',
+  },
+  { name: 'React', src: '/assets/skills/react.svg', href: 'https://react.dev/', alt: 'React JavaScript library logo' },
+  {
+    name: 'TypeScript',
+    src: '/assets/skills/typescript.svg',
+    href: 'https://www.typescriptlang.org/',
+    alt: 'TypeScript logo',
+  },
+  { name: 'Node.js', src: '/assets/skills/nodedotjs.svg', href: 'https://nodejs.org/', alt: 'Node.js logo' },
+  { name: 'MySQL', src: '/assets/skills/mysql.svg', href: 'https://www.mysql.com/', alt: 'MySQL database logo' },
+  {
+    name: 'PostgreSQL',
+    src: '/assets/skills/postgresql.svg',
+    href: 'https://www.postgresql.org/',
+    alt: 'PostgreSQL database logo',
+  },
+  { name: 'AWS', src: '/assets/skills/aws.svg', href: 'https://aws.amazon.com/', alt: 'Amazon Web Services logo' },
+  { name: 'Docker', src: '/assets/skills/docker.svg', href: 'https://www.docker.com/', alt: 'Docker logo' },
+  {
+    name: 'Kubernetes',
+    src: '/assets/skills/kubernetes.svg',
+    href: 'https://kubernetes.io/',
+    alt: 'Kubernetes logo',
+  },
+  { name: 'Git', src: '/assets/skills/git.svg', href: 'https://git-scm.com/', alt: 'Git version control logo' },
+  { name: 'Postman', src: '/assets/skills/postman.svg', href: 'https://www.postman.com/', alt: 'Postman API platform logo' },
+  { name: 'Redis', src: '/assets/skills/redis.svg', href: 'https://redis.io/', alt: 'Redis logo' },
+  { name: 'Linux', src: '/assets/skills/linux.svg', href: 'https://www.linux.org/', alt: 'Linux logo' },
 ]
 
 export type ProjectCategory = 'All' | 'Enterprise' | 'Open Source' | 'Hackathon' | 'Apps'

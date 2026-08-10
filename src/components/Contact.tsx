@@ -50,7 +50,7 @@ export function Contact() {
                 aria-label={s.name}
                 title={s.name}
               >
-                <img src={s.icon} alt="" width={36} height={28} />
+                <img src={s.icon} alt={s.alt} width={36} height={28} />
               </a>
             </motion.li>
           ))}

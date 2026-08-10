@@ -98,7 +98,7 @@ export function About() {
           {skillIcons.map((skill) => (
             <li className="clients-item" key={skill.name}>
               <a href={skill.href} target="_blank" rel="noreferrer" title={skill.name}>
-                <img src={skill.src} alt={skill.name} />
+                <img src={skill.src} alt={skill.alt} title={skill.name} />
               </a>
             </li>
           ))}

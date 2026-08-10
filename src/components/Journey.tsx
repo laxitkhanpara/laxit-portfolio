@@ -121,7 +121,7 @@ export function Journey() {
                         onClick={() => setLightbox(photo)}
                         aria-label={`View ${photo.alt}`}
                       >
-                        <img src={photo.src} alt="" loading="lazy" />
+                        <img src={photo.src} alt={photo.alt} loading="lazy" />
                       </button>
                     ))}
                   </div>

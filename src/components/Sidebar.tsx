@@ -112,7 +112,7 @@ export function Sidebar() {
                   aria-label={s.name}
                   title={s.name}
                 >
-                  <img src={s.icon} alt="" width={22} height={18} />
+                  <img src={s.icon} alt={s.alt} width={22} height={18} />
                 </a>
               </li>
             ))}
