@@ -97,7 +97,7 @@
   font-size: 14px;
 }
 
-/* Aakash-style skill icon strip */
+/* Skills icon strip — centered, tight, no scroll */
 .clients {
   margin-top: 32px;
   margin-bottom: 8px;
@@ -105,37 +105,18 @@
 
 .clients-list {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin: 0 -8px;
-  padding: 20px 12px 22px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 12px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) #2a2a2c;
-}
-
-.clients-list::-webkit-scrollbar {
-  height: 6px;
-}
-
-.clients-list::-webkit-scrollbar-track {
-  background: #2a2a2c;
-  border-radius: 999px;
-}
-
-.clients-list::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 999px;
+  gap: 0;
+  margin: 0;
+  padding: 10px 0 6px;
+  list-style: none;
+  overflow: visible;
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
 }
@@ -143,10 +124,10 @@
 .clients-item a {
   display: grid;
   place-items: center;
-  width: 100%;
-  min-height: 72px;
-  padding: 14px 18px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  border-radius: 10px;
   border: 1px solid transparent;
   transition: border-color var(--transition), background var(--transition);
 }
@@ -157,8 +138,8 @@
 }
 
 .clients-item img {
-  width: min(100%, 110px);
-  height: 48px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
   filter: none;
   transition: transform 0.25s ease;
@@ -177,29 +158,6 @@
   }
 }
 
-@media (min-width: 580px) {
-  .clients-item {
-    min-width: calc(33.33% - 10px);
-  }
-}
-
-@media (min-width: 768px) {
-  .clients-list {
-    gap: 28px;
-    padding: 28px 16px 30px;
-  }
-
-  .clients-item {
-    min-width: calc(25% - 21px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .clients-item {
-    min-width: calc(20% - 23px);
-  }
-}
-
 @media (max-width: 768px) {
   .service-list {
     grid-template-columns: 1fr;
@@ -207,5 +165,16 @@
 
   .service-item {
     padding: 16px;
+  }
+
+  .clients-item a {
+    width: 42px;
+    height: 42px;
+    padding: 5px;
+  }
+
+  .clients-item img {
+    width: 28px;
+    height: 28px;
   }
 }
