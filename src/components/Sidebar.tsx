@@ -32,6 +32,7 @@ function IconPin() {
 
 export function Sidebar() {
   const [open, setOpen] = useState(false)
+  const [avatarOpen, setAvatarOpen] = useState(false)
   const initials = profile.name
     .split(' ')
     .map((p) => p[0])
@@ -47,21 +48,28 @@ export function Sidebar() {
     >
       <div className="sidebar-inner">
         <div className="sidebar-top">
-          <motion.div
-            className="avatar-box"
+          <motion.button
+            type="button"
+            className="avatar-wrap"
+            aria-label="View profile photo"
+            onClick={() => profile.avatar && setAvatarOpen(true)}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.15, type: 'spring', stiffness: 160, damping: 14 }}
-            whileHover={{ scale: 1.04, rotate: -2 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {profile.avatar ? (
-              <img className="avatar-img" src={profile.avatar} alt={profile.name} />
-            ) : (
-              <span className="avatar-initials" aria-hidden>
-                {initials}
-              </span>
-            )}
-          </motion.div>
+            <span className="avatar-ring" aria-hidden />
+            <span className="avatar-box">
+              {profile.avatar ? (
+                <img className="avatar-img" src={profile.avatar} alt={profile.name} />
+              ) : (
+                <span className="avatar-initials" aria-hidden>
+                  {initials}
+                </span>
+              )}
+            </span>
+          </motion.button>
           <motion.h1 className="sidebar-name" variants={fadeUp} initial="hidden" animate="show">
             {profile.name}
           </motion.h1>
@@ -153,6 +161,25 @@ export function Sidebar() {
           </motion.a>
         </div>
       </div>
+
+      {avatarOpen && profile.avatar ? (
+        <div
+          className="avatar-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Profile photo"
+          onClick={() => setAvatarOpen(false)}
+        >
+          <button type="button" className="avatar-lightbox-close" aria-label="Close">
+            ×
+          </button>
+          <img
+            src={profile.avatar}
+            alt={profile.name}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </motion.aside>
   )
 }
