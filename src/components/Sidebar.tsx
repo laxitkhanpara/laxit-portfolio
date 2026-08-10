@@ -23,7 +23,6 @@ function IconPin() {
 
 export function Sidebar() {
   const [open, setOpen] = useState(false)
-  const [avatarOpen, setAvatarOpen] = useState(false)
   const initials = profile.name
     .split(' ')
     .map((p) => p[0])
@@ -39,12 +38,7 @@ export function Sidebar() {
     >
       <div className="sidebar-inner">
         <div className="sidebar-top">
-          <button
-            type="button"
-            className="avatar-wrap"
-            aria-label="View profile photo"
-            onClick={() => profile.avatar && setAvatarOpen(true)}
-          >
+          <div className="avatar-wrap">
             <span className="avatar-ring" aria-hidden />
             <span className="avatar-box">
               {profile.avatar ? (
@@ -55,7 +49,7 @@ export function Sidebar() {
                 </span>
               )}
             </span>
-          </button>
+          </div>
           <motion.h1 className="sidebar-name" variants={fadeUp} initial="hidden" animate="show">
             {profile.name}
           </motion.h1>
@@ -135,25 +129,6 @@ export function Sidebar() {
           </motion.a>
         </div>
       </div>
-
-      {avatarOpen && profile.avatar ? (
-        <div
-          className="avatar-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Profile photo"
-          onClick={() => setAvatarOpen(false)}
-        >
-          <button type="button" className="avatar-lightbox-close" aria-label="Close">
-            ×
-          </button>
-          <img
-            src={profile.avatar}
-            alt={profile.name}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      ) : null}
     </motion.aside>
   )
 }
