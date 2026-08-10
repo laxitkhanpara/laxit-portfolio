@@ -103,23 +103,30 @@
 
 .social-icon-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 12px 14px;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.social-icon-list li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .social-icon-list a {
   display: grid;
   place-items: center;
-  width: 56px;
+  width: 100%;
   height: 48px;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--card-soft);
-  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  transition: border-color var(--transition), background var(--transition);
 }
 
 .social-icon-list a:hover {
@@ -128,8 +135,8 @@
 }
 
 .social-icon-list img {
-  width: 40px;
-  height: 32px;
+  width: 36px;
+  height: 28px;
   object-fit: contain;
   display: block;
   /* keep brand colors — do not desaturate */
@@ -137,6 +144,20 @@
 }
 
 @media (max-width: 640px) {
+  .social-icon-list {
+    gap: 6px;
+  }
+
+  .social-icon-list a {
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .social-icon-list img {
+    width: 28px;
+    height: 22px;
+  }
+
   .input-wrapper {
     grid-template-columns: 1fr;
   }

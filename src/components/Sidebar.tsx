@@ -39,16 +39,11 @@ export function Sidebar() {
     >
       <div className="sidebar-inner">
         <div className="sidebar-top">
-          <motion.button
+          <button
             type="button"
             className="avatar-wrap"
             aria-label="View profile photo"
             onClick={() => profile.avatar && setAvatarOpen(true)}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.15, type: 'spring', stiffness: 160, damping: 14 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
           >
             <span className="avatar-ring" aria-hidden />
             <span className="avatar-box">
@@ -60,7 +55,7 @@ export function Sidebar() {
                 </span>
               )}
             </span>
-          </motion.button>
+          </button>
           <motion.h1 className="sidebar-name" variants={fadeUp} initial="hidden" animate="show">
             {profile.name}
           </motion.h1>
@@ -123,7 +118,7 @@ export function Sidebar() {
                   aria-label={s.name}
                   title={s.name}
                 >
-                  <img src={s.icon} alt="" width={28} height={22} />
+                  <img src={s.icon} alt="" width={22} height={18} />
                 </a>
               </li>
             ))}

@@ -42,7 +42,7 @@ export function Contact() {
         <h3 className="section-title">Connect</h3>
         <motion.ul className="social-icon-list" variants={stagger} initial="hidden" animate="show">
           {socialLinks.map((s) => (
-            <motion.li key={s.name} variants={fadeUp} whileHover={{ y: -4, scale: 1.06 }}>
+            <motion.li key={s.name} variants={fadeUp}>
               <a
                 href={s.href}
                 target={s.href.startsWith('mailto:') ? undefined : '_blank'}
@@ -50,7 +50,7 @@ export function Contact() {
                 aria-label={s.name}
                 title={s.name}
               >
-                <img src={s.icon} alt="" width={52} height={40} />
+                <img src={s.icon} alt="" width={36} height={28} />
               </a>
             </motion.li>
           ))}
