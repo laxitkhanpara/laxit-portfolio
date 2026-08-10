@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import './Navbar.css'
 
 export type Tab = 'About' | 'Experience' | 'Education' | 'Portfolio' | 'Journey' | 'Contact'
@@ -11,10 +13,26 @@ const tabs: { id: Tab; short: string; icon: 'user' | 'briefcase' | 'grad' | 'gri
   { id: 'Contact', short: 'Talk', icon: 'mail' },
 ]
 
+function useIsMobileNav() {
+  const [mobile, setMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 1024px)').matches : false,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1024px)')
+    const sync = () => setMobile(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
+  return mobile
+}
+
 function NavIcon({ name }: { name: (typeof tabs)[number]['icon'] }) {
   const common = {
-    width: 18,
-    height: 18,
+    width: 20,
+    height: 20,
     viewBox: '0 0 24 24',
     fill: 'none',
     stroke: 'currentColor',
@@ -71,26 +89,32 @@ function NavIcon({ name }: { name: (typeof tabs)[number]['icon'] }) {
 }
 
 export function Navbar({ active, onChange }: { active: Tab; onChange: (tab: Tab) => void }) {
+  const mobileNav = useIsMobileNav()
+
+  const nav = (
+    <nav className={`navbar${mobileNav ? ' navbar-dock' : ''}`} aria-label="Primary">
+      {tabs.map((tab) => (
+        <button
+          key={tab.id}
+          type="button"
+          className={active === tab.id ? 'active' : ''}
+          onClick={() => onChange(tab.id)}
+          aria-current={active === tab.id ? 'page' : undefined}
+        >
+          <span className="nav-icon">
+            <NavIcon name={tab.icon} />
+          </span>
+          <span className="nav-label-full">{tab.id}</span>
+          <span className="nav-label-short">{tab.short}</span>
+        </button>
+      ))}
+    </nav>
+  )
+
   return (
     <header className="article-header">
       <h2 className="article-title">{active}</h2>
-      <nav className="navbar" aria-label="Primary">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            type="button"
-            className={active === tab.id ? 'active' : ''}
-            onClick={() => onChange(tab.id)}
-            aria-current={active === tab.id ? 'page' : undefined}
-          >
-            <span className="nav-icon">
-              <NavIcon name={tab.icon} />
-            </span>
-            <span className="nav-label-full">{tab.id}</span>
-            <span className="nav-label-short">{tab.short}</span>
-          </button>
-        ))}
-      </nav>
+      {mobileNav ? createPortal(nav, document.body) : nav}
     </header>
   )
 }
