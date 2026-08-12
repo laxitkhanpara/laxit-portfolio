@@ -346,6 +346,8 @@ export const awards = [
 
 export type JourneyItem = {
   id: string
+  /** YYYYMM — used for newest-first ordering (higher = more recent) */
+  sortDate: number
   year: string
   title: string
   tag: string
@@ -358,108 +360,24 @@ export type JourneyItem = {
 
 export const journey: JourneyItem[] = [
   {
-    id: 'education',
-    year: '2021 — 2025',
-    title: 'B.Tech · Information Technology',
-    tag: 'Education',
-    story:
-      'Parul Institute of Engineering and Technology — built software fundamentals while shipping freelance and hackathon products on the side. Graduated with CGPA 8.39.',
-    image: '/media/journey/education-graduation.jpg',
-    images: ['/media/journey/education-campus.jpg'],
-  },
-  {
-    id: 'vadodara-hackathon',
-    year: 'Sep 2023',
-    title: 'Vadodara Hackathon · GuruZone',
+    id: 'cursor-event',
+    sortDate: 202606,
+    year: '2026',
+    title: 'Cursor Hackathon · Building with AI',
     tag: 'Hackathon',
     story:
-      'Built GuruZone — a personalized AI tutoring marketplace — and took 1st place among 200+ teams. Sprint pressure, real users, real product.',
-    image: '/media/journey/vadodara-hackathon.jpg',
-    images: ['/media/journey/guruzone.jpg'],
-  },
-  {
-    id: 'cybersecurity-fdp',
-    year: 'Dec 2023',
-    title: 'AICTE ATAL FDP · Cybersecurity',
-    tag: 'Learning',
-    story:
-      'Completed the AICTE ATAL one-week Faculty Development Program on Cybersecurity Strategies and Best Practices at Parul University.',
-    image: '/media/journey/cybersecurity-fdp.jpg',
-  },
-  {
-    id: 'azure-ai',
-    year: 'Jan 2024',
-    title: 'Microsoft Azure AI Credentials',
-    tag: 'Certification',
-    story:
-      'Earned Microsoft credentials for Azure AI Language (NLP) and Azure AI Vision — doubling down on applied AI skills.',
-    image: '/media/journey/azure-nlp.jpg',
-    images: ['/media/journey/azure-vision.jpg'],
-  },
-  {
-    id: 'pu-hackathon',
-    year: 'Mar 2024',
-    title: 'PU Code Hackathon · CampusWay',
-    tag: 'Hackathon',
-    story:
-      '36-hour AR indoor navigation marathon with Richa & Riya Patel. Backend / Unity / full-stack — finished 3rd at Parul University.',
-    image: '/media/journey/pu-hackathon.jpg',
-  },
-  {
-    id: 'campus-competitions',
-    year: '2024',
-    title: 'CodeChef · Ideathon · Campus Awards',
-    tag: 'Award',
-    story:
-      'Campus competitions kept the competitive edge sharp — CodeChef events, Ideathon 2024, and Engineers’ Day recognitions from the IT department.',
-    image: '/media/journey/codechef-engineers-day.jpg',
-    images: ['/media/journey/codechef-ideathon.jpg', '/media/journey/campus-certificates.jpg'],
-  },
-  {
-    id: 'placement',
-    year: '2024 — 2025',
-    title: 'Proudly Placed · Campus Milestone',
-    tag: 'Career',
-    story:
-      'Campus placement season — celebrating the jump from student projects to shipping production software with friends who ran the race together.',
-    image: '/media/journey/placement-award.jpg',
-    images: ['/media/journey/placement-friends.jpg'],
-  },
-  {
-    id: 'products',
-    year: '2023 — 2024',
-    title: 'Shipping Products · Sharshah & GiveVote',
-    tag: 'Build',
-    story:
-      'Full-stack product work across HR admin (Sharshah) and digital voting (GiveVote) — React dashboards, role management, and consumer-facing flows.',
-    image: '/media/journey/sharshah-landing.jpg',
+      'Competed in the Cursor hackathon — shipping faster with AI-assisted workflows alongside builders shaping how engineers create software.',
+    image: '/media/journey/cursor-event.jpg',
     images: [
-      '/media/journey/sharshah-dashboard.jpg',
-      '/media/journey/sharshah-employees.jpg',
-      '/media/journey/givevote.jpg',
+      '/media/journey/aixtor-desk.jpg',
+      '/media/journey/cursor-hackathon-team.jpg',
+      '/media/journey/cursor-hackathon-demo.jpg',
+      '/media/journey/cursor-hackathon-workspace.jpg',
     ],
   },
   {
-    id: 'aixtor',
-    year: 'Dec 2024 — Present',
-    title: 'Associate Software Consultant · Aixtor Technology',
-    tag: 'Career',
-    story:
-      'Owning live B2B CPaaS / Voice AI systems on Integrari — Kafka messaging, campaign dialing, RCS devices, and GenAI workflow coaching.',
-    image: '/media/journey/integrari-voice.jpg',
-    images: ['/media/journey/integrari-rcs.jpg'],
-  },
-  {
-    id: 'axpert',
-    year: 'Jan 2026',
-    title: 'AXpert of the Month · AI Ninja',
-    tag: 'Award',
-    story:
-      'Recognized for adapting AI into real delivery impact — smart implementation, innovative thinking, and consistent performance for the team.',
-    image: '/media/journey/axpert.jpg',
-  },
-  {
     id: 'liferay-community',
+    sortDate: 202605,
     year: '2026',
     title: 'Liferay Community · Certs · Open Source',
     tag: 'Community',
@@ -475,14 +393,201 @@ export const journey: JourneyItem[] = [
     ],
   },
   {
-    id: 'cursor-event',
+    id: 'liferay-cli',
+    sortDate: 202604,
     year: '2026',
-    title: 'Cursor Hackathon · Building with AI',
+    title: 'Open Source · Liferay CX Scaffolders',
+    tag: 'Open Source',
+    story:
+      'Published create-liferay-react-cx and create-liferay-microservice-cx on npm — featured on the official Liferay blog for one-command Client Extension scaffolding.',
+    image: '/media/journey/liferay-cli-npm.jpg',
+    images: [
+      '/media/journey/liferay-blog-feature.jpg',
+      '/media/journey/liferay-cli-terminal.jpg',
+      '/media/journey/liferay-cli-repo.jpg',
+    ],
+  },
+  {
+    id: 'axpert',
+    sortDate: 202601,
+    year: 'Jan 2026',
+    title: 'AXpert of the Month · AI Ninja',
+    tag: 'Award',
+    story:
+      'Recognized for adapting AI into real delivery impact — smart implementation, innovative thinking, and consistent performance for the team.',
+    image: '/media/journey/axpert.jpg',
+    images: ['/media/journey/axpert-certificate.jpg'],
+  },
+  {
+    id: 'aixtor',
+    sortDate: 202501,
+    year: 'Dec 2024 — Present',
+    title: 'Associate Software Consultant · Aixtor Technology',
+    tag: 'Career',
+    story:
+      'Owning live B2B CPaaS / Voice AI systems on Integrari — Kafka messaging, campaign dialing, RCS devices, and GenAI workflow coaching.',
+    image: '/media/journey/integrari-voice.jpg',
+    images: [
+      '/media/journey/integrari-rcs.jpg',
+      '/media/journey/aixtor-office.jpg',
+      '/media/journey/integrari-dashboard.jpg',
+      '/media/journey/integrari-team.jpg',
+    ],
+  },
+  {
+    id: 'education',
+    sortDate: 202506,
+    year: '2021 — 2025',
+    title: 'B.Tech · Information Technology',
+    tag: 'Education',
+    story:
+      'Parul Institute of Engineering and Technology — built software fundamentals while shipping freelance and hackathon products on the side. Graduated with CGPA 8.39.',
+    image: '/media/journey/education-graduation.jpg',
+    images: ['/media/journey/education-campus.jpg', '/media/journey/education-convocation.jpg'],
+  },
+  {
+    id: 'placement',
+    sortDate: 202505,
+    year: '2024 — 2025',
+    title: 'Proudly Placed · Campus Milestone',
+    tag: 'Career',
+    story:
+      'Campus placement season — celebrating the jump from student projects to shipping production software with friends who ran the race together.',
+    image: '/media/journey/placement-award.jpg',
+    images: ['/media/journey/placement-friends.jpg', '/media/journey/placement-celebration.jpg'],
+  },
+  {
+    id: 'vastrarent',
+    sortDate: 202502,
+    year: '2025',
+    title: 'VastraRent API · Production Backend',
+    tag: 'Build',
+    story:
+      'Clothing rental platform API with PostgreSQL schema design, OAuth2 JWT auth, RBAC, and Docker — built for production-grade rental workflows.',
+    image: '/media/journey/vastrarent-api.jpg',
+    images: ['/media/journey/vastrarent-swagger.jpg', '/media/journey/vastrarent-docker.jpg'],
+  },
+  {
+    id: 'freelance-limbdi',
+    sortDate: 202412,
+    year: '2024 — Present',
+    title: 'Freelance · Limbdi University Management System',
+    tag: 'Build',
+    story:
+      'Live full-stack UMS with Student, Teacher, and Admin portals — automated grades, attendance, timetables, and PDF marksheets.',
+    image: '/media/journey/limbdi-ums-portal.jpg',
+    images: [
+      '/media/journey/limbdi-ums-admin.jpg',
+      '/media/journey/limbdi-ums-marksheet.jpg',
+      '/media/journey/limbdi-ums-dashboard.jpg',
+    ],
+  },
+  {
+    id: 'cscode-tech',
+    sortDate: 202409,
+    year: 'Apr 2023 — Sep 2024',
+    title: 'Full Stack Developer · CSCodeTech',
+    tag: 'Career',
+    story:
+      'Shipped Spring Boot + React modules for the ESM platform — hierarchical RBAC across UMS, Payroll, Attendance, and 10+ enterprise modules.',
+    image: '/media/journey/cscode-esm.jpg',
+    images: [
+      '/media/journey/cscode-rbac.jpg',
+      '/media/journey/cscode-dashboard.jpg',
+      '/media/journey/cscode-team.jpg',
+    ],
+  },
+  {
+    id: 'campus-competitions',
+    sortDate: 202406,
+    year: '2024',
+    title: 'CodeChef · Ideathon · Campus Awards',
+    tag: 'Award',
+    story:
+      'Campus competitions kept the competitive edge sharp — CodeChef events, Ideathon 2024, and Engineers’ Day recognitions from the IT department.',
+    image: '/media/journey/codechef-engineers-day.jpg',
+    images: ['/media/journey/codechef-ideathon.jpg', '/media/journey/campus-certificates.jpg'],
+  },
+  {
+    id: 'pu-hackathon',
+    sortDate: 202403,
+    year: 'Mar 2024',
+    title: 'PU Code Hackathon · CampusWay',
     tag: 'Hackathon',
     story:
-      'Competed in the Cursor hackathon — shipping faster with AI-assisted workflows alongside builders shaping how engineers create software.',
-    image: '/media/journey/cursor-event.jpg',
-    images: ['/media/journey/aixtor-desk.jpg'],
+      '36-hour AR indoor navigation marathon with Richa & Riya Patel. Backend / Unity / full-stack — finished 3rd at Parul University.',
+    image: '/media/journey/pu-hackathon.jpg',
+    images: ['/media/journey/pu-hackathon-team.jpg', '/media/journey/campusway-demo.jpg'],
+  },
+  {
+    id: 'givevote',
+    sortDate: 202402,
+    year: '2023 — 2024',
+    title: 'GiveVote · E-Voting Platform',
+    tag: 'Build',
+    story:
+      'Consumer-facing digital voting experience for elections and candidates — full-stack flows from signup to live results.',
+    image: '/media/journey/givevote.jpg',
+    images: ['/media/journey/givevote-dashboard.jpg', '/media/journey/givevote-results.jpg'],
+  },
+  {
+    id: 'sharshah',
+    sortDate: 202401,
+    year: '2023 — 2024',
+    title: 'Sharshah · HR Role Management',
+    tag: 'Build',
+    story:
+      'HR admin system for employees, leaves, departments, and workshifts — React dashboards with role-based access patterns.',
+    image: '/media/journey/sharshah-landing.jpg',
+    images: [
+      '/media/journey/sharshah-dashboard.jpg',
+      '/media/journey/sharshah-employees.jpg',
+      '/media/journey/sharshah-leaves.jpg',
+    ],
+  },
+  {
+    id: 'azure-ai',
+    sortDate: 202401,
+    year: 'Jan 2024',
+    title: 'Microsoft Azure AI Credentials',
+    tag: 'Certification',
+    story:
+      'Earned Microsoft credentials for Azure AI Language (NLP) and Azure AI Vision — doubling down on applied AI skills.',
+    image: '/media/journey/azure-nlp.jpg',
+    images: ['/media/journey/azure-vision.jpg'],
+  },
+  {
+    id: 'codeshafe-dsa',
+    sortDate: 202401,
+    year: '2024',
+    title: 'Codeshafe Winner · DSA Master',
+    tag: 'Award',
+    story:
+      'Won the Codeshafe DSA Master competition — sharpening algorithmic thinking under timed pressure.',
+    image: '/media/journey/codeshafe-dsa.jpg',
+    images: ['/media/journey/codeshafe-certificate.jpg'],
+  },
+  {
+    id: 'cybersecurity-fdp',
+    sortDate: 202312,
+    year: 'Dec 2023',
+    title: 'AICTE ATAL FDP · Cybersecurity',
+    tag: 'Learning',
+    story:
+      'Completed the AICTE ATAL one-week Faculty Development Program on Cybersecurity Strategies and Best Practices at Parul University.',
+    image: '/media/journey/cybersecurity-fdp.jpg',
+    images: ['/media/journey/cybersecurity-fdp-certificate.jpg'],
+  },
+  {
+    id: 'vadodara-hackathon',
+    sortDate: 202309,
+    year: 'Sep 2023',
+    title: 'Vadodara Hackathon · GuruZone',
+    tag: 'Hackathon',
+    story:
+      'Built GuruZone — a personalized AI tutoring marketplace — and took 1st place among 200+ teams. Sprint pressure, real users, real product.',
+    image: '/media/journey/vadodara-hackathon.jpg',
+    images: ['/media/journey/guruzone.jpg', '/media/journey/vadodara-hackathon-team.jpg'],
   },
 ]
 
