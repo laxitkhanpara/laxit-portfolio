@@ -10,10 +10,34 @@ export type UploadResult = {
   saved: string[]
 }
 
+const UPLOAD_UNAVAILABLE =
+  'Direct save only works with npm run dev locally. On the live site, use Download files instead.'
+
+async function parseUploadResponse(res: Response): Promise<UploadResult | { error?: string }> {
+  const text = await res.text()
+  if (!text.trim()) {
+    throw new Error(UPLOAD_UNAVAILABLE)
+  }
+  try {
+    return JSON.parse(text) as UploadResult | { error?: string }
+  } catch {
+    throw new Error(UPLOAD_UNAVAILABLE)
+  }
+}
+
+/** True when Vite dev server provides POST /api/journey-upload */
+export function isDevUploadEnabled(): boolean {
+  return import.meta.env.DEV
+}
+
 export async function uploadJourneyFiles(
   files: { file: File; name: string }[],
   pin?: string,
 ): Promise<UploadResult> {
+  if (!isDevUploadEnabled()) {
+    throw new Error(UPLOAD_UNAVAILABLE)
+  }
+
   const payload = {
     pin: pin?.trim() || undefined,
     files: await Promise.all(
@@ -30,7 +54,7 @@ export async function uploadJourneyFiles(
     body: JSON.stringify(payload),
   })
 
-  const data = (await res.json()) as UploadResult | { error?: string }
+  const data = await parseUploadResponse(res)
 
   if (!res.ok) {
     throw new Error('error' in data && data.error ? data.error : `Upload failed (${res.status})`)

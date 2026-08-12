@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { journey } from '../content'
-import { buildContentSnippet, uploadJourneyFiles } from '../lib/journeyUploadApi'
+import { buildContentSnippet, isDevUploadEnabled, uploadJourneyFiles } from '../lib/journeyUploadApi'
 import { downloadFile, sanitizeJourneyFilename } from '../lib/uploadFilename'
 import '../index.css'
 import './JourneyUpload.css'
@@ -13,7 +13,22 @@ type QueueItem = {
   isCover: boolean
 }
 
-function suggestFilename(file: File, milestoneId: string, index: number): string {
+function milestoneFilenames(milestoneId: string): string[] {
+  const item = journey.find((entry) => entry.id === milestoneId)
+  if (!item) return []
+  const paths = [item.image, ...(item.images ?? [])].filter(Boolean) as string[]
+  return paths.map((p) => p.split('/').pop() ?? p)
+}
+
+function suggestFilename(
+  file: File,
+  milestoneId: string,
+  index: number,
+  presetNames: string[],
+): string {
+  if (presetNames[index]) {
+    return sanitizeJourneyFilename(presetNames[index])
+  }
   const ext = file.name.includes('.') ? file.name.slice(file.name.lastIndexOf('.')) : '.jpg'
   const suffix = index === 0 ? 'cover' : String(index + 1)
   return sanitizeJourneyFilename(`${milestoneId}-${suffix}${ext}`)
@@ -30,6 +45,7 @@ export function JourneyUploadPage() {
     null,
   )
   const [snippet, setSnippet] = useState('')
+  const devUpload = isDevUploadEnabled()
 
   const milestone = useMemo(
     () => journey.find((item) => item.id === milestoneId),
@@ -45,13 +61,14 @@ export function JourneyUploadPage() {
       }
 
       setQueue((prev) => {
+        const presetNames = milestoneFilenames(milestoneId)
         const next = [...prev]
         list.forEach((file, offset) => {
           const index = prev.length + offset
           next.push({
             id: `${Date.now()}-${index}-${file.name}`,
             file,
-            name: suggestFilename(file, milestoneId, index),
+            name: suggestFilename(file, milestoneId, index, presetNames),
             previewUrl: URL.createObjectURL(file),
             isCover: prev.length === 0 && offset === 0,
           })
@@ -143,7 +160,7 @@ export function JourneyUploadPage() {
       const message = err instanceof Error ? err.message : 'Upload failed'
       setStatus({
         kind: 'error',
-        text: `${message} — use “Download files” on the live site, or run npm run dev locally for direct save.`,
+        text: message,
       })
     } finally {
       setBusy(false)
@@ -163,9 +180,18 @@ export function JourneyUploadPage() {
           <div>
             <h1>Journey photo upload</h1>
             <p>
-              Add images for your Journey timeline. On <strong>local dev</strong>, files save straight into{' '}
-              <code>public/media/journey/</code>. On the live site, download the files and commit them to GitHub
-              (or share the zip in Cursor chat).
+              Add images for your Journey timeline.{' '}
+              {devUpload ? (
+                <>
+                  On <strong>local dev</strong>, use <strong>Save to project</strong> to write files into{' '}
+                  <code>public/media/journey/</code>.
+                </>
+              ) : (
+                <>
+                  On the live site, use <strong>Download files</strong>, then add them to{' '}
+                  <code>public/media/journey/</code> in GitHub (or share them in Cursor chat).
+                </>
+              )}
             </p>
           </div>
           <a className="upload-back" href="/">
@@ -190,7 +216,7 @@ export function JourneyUploadPage() {
                 ))}
               </select>
             </div>
-            {import.meta.env.VITE_UPLOAD_PIN ? (
+            {devUpload && import.meta.env.VITE_UPLOAD_PIN ? (
               <div className="upload-field">
                 <label htmlFor="pin">Upload PIN</label>
                 <input
@@ -294,23 +320,33 @@ export function JourneyUploadPage() {
           )}
 
           <div className="upload-actions">
+            {devUpload ? (
+              <button
+                type="button"
+                className="upload-btn upload-btn-primary"
+                disabled={busy || queue.length === 0}
+                onClick={handleUpload}
+              >
+                Save to project (dev)
+              </button>
+            ) : null}
             <button
               type="button"
-              className="upload-btn upload-btn-primary"
-              disabled={busy || queue.length === 0}
-              onClick={handleUpload}
-            >
-              Save to project (dev)
-            </button>
-            <button
-              type="button"
-              className="upload-btn"
+              className={`upload-btn ${devUpload ? '' : 'upload-btn-primary'}`}
               disabled={busy || queue.length === 0}
               onClick={handleDownloadAll}
             >
               Download files
             </button>
           </div>
+
+          {!devUpload ? (
+            <p className="upload-hint" style={{ marginTop: 12 }}>
+              After download, commit the images to <code>public/media/journey/</code> and push — Render will
+              show them on Journey automatically (paths are already in content.ts for milestones like GDG
+              DevFest).
+            </p>
+          ) : null}
 
           {status ? <div className={`upload-status ${status.kind}`}>{status.text}</div> : null}
         </section>
