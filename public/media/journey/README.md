@@ -1,5 +1,7 @@
 # Journey photos
 
+**Upload page:** [/admin/upload](/admin/upload) — drag photos, pick a milestone, download or save (dev).
+
 Drop JPG/PNG/WebP files here for the **Journey** tab. Paths are wired in `src/content.ts` → `journey`.
 
 ## Add a new milestone

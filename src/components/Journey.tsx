@@ -169,7 +169,8 @@ export function Journey() {
     <article className="journey">
       <p className="journey-intro">
         A visual timeline of education, hackathons, certifications, product work, awards, and community — newest
-        milestones first.
+        milestones first.{' '}
+        <a href="/admin/upload">Upload journey photos →</a>
       </p>
 
       <motion.ol className="journey-list" variants={stagger} initial="hidden" animate="show">
