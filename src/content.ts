@@ -360,6 +360,21 @@ export type JourneyItem = {
 
 export const journey: JourneyItem[] = [
   {
+    id: 'gdg-devfest-gandhinagar-2026',
+    sortDate: 202606,
+    year: 'Jun 2026',
+    title: 'GDG DevFest · Gandhinagar',
+    tag: 'Community',
+    story:
+      'Attended GDG Gandhinagar DevFest — sessions on modern engineering, AI, and cloud, plus connecting with local builders and the Google developer community.',
+    image: '/media/journey/gdg-devfest-gandhinagar-2026-cover.jpg',
+    images: [
+      '/media/journey/gdg-devfest-gandhinagar-2026-badge.jpg',
+      '/media/journey/gdg-devfest-gandhinagar-2026-session.jpg',
+      '/media/journey/gdg-devfest-gandhinagar-2026-group.jpg',
+    ],
+  },
+  {
     id: 'cursor-event',
     sortDate: 202606,
     year: '2026',

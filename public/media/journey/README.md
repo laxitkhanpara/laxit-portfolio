@@ -35,6 +35,10 @@ These paths are already wired; add matching files when you have them:
 
 | File | Milestone |
 |------|-----------|
+| `gdg-devfest-gandhinagar-2026-cover.jpg` | GDG DevFest Gandhinagar |
+| `gdg-devfest-gandhinagar-2026-badge.jpg` | GDG DevFest Gandhinagar |
+| `gdg-devfest-gandhinagar-2026-session.jpg` | GDG DevFest Gandhinagar |
+| `gdg-devfest-gandhinagar-2026-group.jpg` | GDG DevFest Gandhinagar |
 | `cursor-hackathon-team.jpg` | Cursor Hackathon |
 | `cursor-hackathon-demo.jpg` | Cursor Hackathon |
 | `cursor-hackathon-workspace.jpg` | Cursor Hackathon |
