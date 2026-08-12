@@ -514,13 +514,13 @@ export const journey: JourneyItem[] = [
   {
     id: 'campus-competitions',
     sortDate: 202406,
-    year: '2024',
-    title: 'CodeChef · Ideathon · Campus Awards',
+    year: 'Jun 2024',
+    title: 'CodeChef · Ideathon 2024',
     tag: 'Award',
     story:
-      'Campus competitions kept the competitive edge sharp — CodeChef events, Ideathon 2024, and Engineers’ Day recognitions from the IT department.',
+      'Campus CodeChef events and Ideathon 2024 — competitive coding and product sprints that kept the edge sharp between hackathons and shipping real projects.',
     image: '/media/journey/codechef-engineers-day.jpg',
-    images: ['/media/journey/codechef-ideathon.jpg', '/media/journey/campus-certificates.jpg'],
+    images: ['/media/journey/codechef-ideathon.jpg'],
   },
   {
     id: 'pu-hackathon',
@@ -596,12 +596,16 @@ export const journey: JourneyItem[] = [
     id: 'vadodara-hackathon',
     sortDate: 202309,
     year: 'Sep 2023',
-    title: 'Vadodara Hackathon · GuruZone',
+    title: 'Vadodara Hackathon 4.0 · GuruZone',
     tag: 'Hackathon',
     story:
-      'Built GuruZone — a personalized AI tutoring marketplace — and took 1st place among 200+ teams. Sprint pressure, real users, real product.',
+      'Built GuruZone — a personalized AI tutoring marketplace — and took 1st place among 200+ teams at Vadodara Hackathon 4.0. Sprint pressure, real users, real product.',
     image: '/media/journey/vadodara-hackathon.jpg',
-    images: ['/media/journey/guruzone.jpg', '/media/journey/vadodara-hackathon-team.jpg'],
+    images: [
+      '/media/journey/guruzone.jpg',
+      '/media/journey/campus-certificates.jpg',
+      '/media/journey/vadodara-hackathon-team.jpg',
+    ],
   },
 ]
 
