@@ -76,9 +76,24 @@ function journeyUploadApi(): Plugin {
   }
 }
 
+/** Copy index.html → 404.html so static hosts serve the SPA on missing paths */
+function spaFallback404(): Plugin {
+  return {
+    name: 'spa-fallback-404',
+    closeBundle() {
+      const distDir = path.resolve(process.cwd(), 'dist')
+      const index = path.join(distDir, 'index.html')
+      const fallback = path.join(distDir, '404.html')
+      if (fs.existsSync(index)) {
+        fs.copyFileSync(index, fallback)
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), journeyUploadApi()],
+  plugins: [react(), journeyUploadApi(), spaFallback404()],
   server: {
     host: '0.0.0.0',
     port: 5173,

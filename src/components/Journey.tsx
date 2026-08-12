@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { journey } from '../content'
+import { JOURNEY_UPLOAD_HREF } from '../lib/journeyUploadRoute'
 import { fadeUp, stagger } from '../motion'
 import './Journey.css'
 
@@ -170,7 +171,7 @@ export function Journey() {
       <p className="journey-intro">
         A visual timeline of education, hackathons, certifications, product work, awards, and community — newest
         milestones first.{' '}
-        <a href="/admin/upload">Upload journey photos →</a>
+        <a href={JOURNEY_UPLOAD_HREF}>Upload journey photos →</a>
       </p>
 
       <motion.ol className="journey-list" variants={stagger} initial="hidden" animate="show">

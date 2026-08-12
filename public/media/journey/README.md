@@ -1,6 +1,6 @@
 # Journey photos
 
-**Upload page:** [/admin/upload](/admin/upload) — drag photos, pick a milestone, download or save (dev).
+**Upload page:** [laxit.onrender.com/?admin=upload](https://laxit.onrender.com/?admin=upload) (also `/admin/upload` after SPA rewrite deploys).
 
 Drop JPG/PNG/WebP files here for the **Journey** tab. Paths are wired in `src/content.ts` → `journey`.
 
