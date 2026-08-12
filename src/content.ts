@@ -446,8 +446,8 @@ export const journey: JourneyItem[] = [
     tag: 'Career',
     story:
       'Owning live B2B CPaaS / Voice AI systems on Integrari — Kafka messaging, campaign dialing, RCS devices, and GenAI workflow coaching.',
-    image: '/media/journey/aixtor-desk.jpg',
-    images: ['/media/journey/integrari-voice.jpg', '/media/journey/integrari-rcs.jpg'],
+    image: '/media/journey/integrari-voice.jpg',
+    images: ['/media/journey/integrari-rcs.jpg'],
   },
   {
     id: 'axpert',
@@ -477,11 +477,12 @@ export const journey: JourneyItem[] = [
   {
     id: 'cursor-event',
     year: '2026',
-    title: 'Building with Cursor',
-    tag: 'Community',
+    title: 'Cursor Hackathon · Building with AI',
+    tag: 'Hackathon',
     story:
-      'Showing up in the Cursor community — shipping faster with AI-assisted workflows and staying close to tools that shape how engineers build.',
+      'Competed in the Cursor hackathon — shipping faster with AI-assisted workflows alongside builders shaping how engineers create software.',
     image: '/media/journey/cursor-event.jpg',
+    images: ['/media/journey/aixtor-desk.jpg'],
   },
 ]
 
