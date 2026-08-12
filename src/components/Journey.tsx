@@ -60,7 +60,7 @@ export function Journey() {
 
   const items = useMemo(
     () =>
-      journey.map((item) => ({
+      [...journey].reverse().map((item) => ({
         ...item,
         photos: collectPhotos(item),
       })),
