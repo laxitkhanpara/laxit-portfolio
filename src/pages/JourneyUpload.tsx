@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { journey } from '../content'
+import { ADMIN_HUB_HREF } from '../lib/adminRoutes'
 import { buildContentSnippet, isDevUploadEnabled, uploadJourneyFiles } from '../lib/journeyUploadApi'
 import { downloadFile, sanitizeJourneyFilename } from '../lib/uploadFilename'
 import '../index.css'
@@ -194,9 +195,14 @@ export function JourneyUploadPage() {
               )}
             </p>
           </div>
-          <a className="upload-back" href="/">
-            ← Back to portfolio
-          </a>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <a className="upload-back" href={ADMIN_HUB_HREF}>
+              Admin
+            </a>
+            <a className="upload-back" href="/">
+              ← Back to portfolio
+            </a>
+          </div>
         </header>
 
         <section className="upload-card">

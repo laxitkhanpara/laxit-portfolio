@@ -5,7 +5,7 @@ export const profile = {
   phone: '+91 82386 94033',
   birthday: '2003',
   location: 'Ahmedabad, Gujarat, India',
-  resume: '/Laxit_Khanpara_CV.pdf',
+  resume: '/Laxit_Khanpara_CV.pdf?v=5',
   avatar: '/media/profile/laxit-profile.jpg?v=4',
   socials: {
     github: 'https://github.com/laxitkhanpara',
