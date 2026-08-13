@@ -375,8 +375,8 @@ export const journey: JourneyItem[] = [
   },
   {
     id: 'cursor-event',
-    sortDate: 202606,
-    year: '2026',
+    sortDate: 202607,
+    year: 'Jul 2026',
     title: 'Cursor Hackathon · Building with AI',
     tag: 'Hackathon',
     story:
