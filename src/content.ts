@@ -361,8 +361,8 @@ export type JourneyItem = {
 export const journey: JourneyItem[] = [
   {
     id: 'gdg-devfest-gandhinagar-2026',
-    sortDate: 202405,
-    year: 'May 2024',
+    sortDate: 202606,
+    year: 'Jun 2026',
     title: 'GDG Gandhinagar · Agentic Premier League',
     tag: 'Community',
     story:
